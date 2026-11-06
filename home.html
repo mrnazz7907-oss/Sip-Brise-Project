@@ -3,6 +3,167 @@
     <head>
         <meta charset="UTF-8" /> <!--Mengizinkan browser membaca semua jenis karakter teks dan simbol-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--Menunjukan viewport untuk tampilan responsif-->
-        <title>Welcome Good Brise</title>
+        <title>Home Brise</title>
     </head>
+    <body>
+         <header> <!--Header untuk menampilkan logo, navigasi, dan kolom pencarian-->
+            <!--Logo-->
+            <h2>BRISE.</h2> 
+            <!--Navigasi dengan menggunakan tag link href dan unordered list-->
+            <nav>
+                <ul>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="promo.html">Promo</a></li>
+                    <li><a href="popup_layanan.html">Layanan</a></li>
+                    <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
+                </ul>
+            </nav>
+            <!--Kolom Pencarian dan menggunakan placeholder-->
+            <div>
+                <input type="text" placeholder="Cari..." />
+                <button type="submit">Cari</button>
+            </div>
+        </header>
+        <hr> <!--Garis pembatas-->
+        <main> <!--Main untuk menampilkan konten utama-->
+          <!-- Bagian 1: Hero Section (Slider) -->
+        <section id="hero-slider">
+            
+            <!-- SLIDE 1: Morning Brew -->
+            <div class="slide-item">
+                <div>
+                    <p><small>NEW ARRIVAL</small></p>
+                    <h1>The Perfect Morning Brew</h1>
+                    <p>Experience our signature cold brew and seasonal single-origin pour-overs, roasted to perfection in our local facility.</p>
+                    <a href="menu.html"><button>Explore Menu</button></a> 
+                    <a href="https://maps.app.goo.gl/uPf5CsW4v4Je8NDR6"><button>View Locations</button></a>
+                </div>
+                <div>
+                    <img src="images/kopi.hangat.png" alt="Secangkir kopi panas" width="400">
+                </div>
+            </div>
+
+            <!-- SLIDE 2: Freshly Baked -->
+            <div class="slide-item">
+                <div>
+                    <p><small>FRESHLY BAKED</small></p>
+                    <h1>Freshly Baked Every Morning</h1>
+                    <p>Discover our golden, buttery croissants and fresh pastries, baked every morning for the perfect coffee companion.</p>
+                    <a href="menu.html"><button>Explore Menu</button></a> 
+                    <a href="https://maps.app.goo.gl/uPf5CsW4v4Je8NDR6"><button>View Locations</button></a>
+                </div>
+                <div>
+                    <img src="images/roti.png" alt="Roti Croissant" width="400">
+                </div>
+            </div>
+
+            <!-- SLIDE 3: Cold Brew -->
+            <div class="slide-item">
+                <div>
+                    <p><small>BREWED SLOW</small></p>
+                    <h1>Your Daily Cold Brew</h1>
+                    <p>Cool down with our slow-steeped cold brew, served over ice for a smooth, refreshing sip from the first drop to the last.</p>
+                    <a href="menu.html"><button>Explore Menu</button></a> 
+                    <a href="https://maps.app.goo.gl/uPf5CsW4v4Je8NDR6"><button>View Locations</button></a>
+                </div>
+                <div>
+                    <img src="images/kopi.dingin.png" alt="Es kopi cold brew" width="400">
+                </div>
+            </div>
+
+            <!-- Tombol Navigasi Slider (Titik dan Panah) -->
+            <div>
+                <!-- Titik-titik (Dots) di kiri bawah -->
+                <span>&#8226; &#8226; &#8226;</span> 
+                
+                <!-- Tombol panah di kanan bawah -->
+                <!-- &lt; adalah kode HTML untuk simbol < (kiri) -->
+                <!-- &gt; adalah kode HTML untuk simbol > (kanan) -->
+                <button>&lt;</button>
+                <button>&gt;</button>
+            </div>
+        </section>
+        <hr> <!--Garis pembatas-->
+        <!-- Bagian 2: Produk Baru -->
+        <section>
+            <h2>Produk Baru</h2>
+            <!-- Kumpulan gambar produk baru -->
+            <div>
+                <img src="images/spageti.baru.png" alt="Spageti Baru" width="200">
+                <img src="images/roti.baru.png" alt="Roti Baru" width="200">
+                <img src="images/minuman.baru.png" alt="Minuman Baru" width="200">
+            </div>
+        </section>
+        <hr> <!--Garis pembatas-->
+        <!-- Bagian 3: Menu berdasaarkan kategori -->
+         <section>
+            <h2>Brise. Menu</h2>
+            <!-- Kita menggunakan tag <article> kerana setiap item adalah entiti menu yang berdiri sendiri -->
+            <div>
+                <article>
+                    <img src="images/drinks.png" alt="Minuman Ais" width="150">
+                    <h3><a href="menu.html#drinks">Drinks</a></h3>
+                </article>
+                
+                <article>
+                    <img src="images/foods.png" alt="Makanan Spaghetti" width="150">
+                    <h3><a href="menu.html#foods">Foods</a></h3>
+                </article>
+
+                <article>
+                    <img src="images/bakery.png" alt="Roti dan Pastri" width="150">
+                    <h3><a href="menu.html#bakery">Bakery & Pastry</a></h3>
+                </article>
+            </div>
+         </section>
+         <hr> <!--Garis pembatas-->
+        <!-- Bagian 4: Peta lokasi dan informasi -->
+         <section id="lokasi">
+            <!-- Gambar Peta di sebelah kiri -->
+            <div>
+                <img src="images/peta.lokasi.png" alt="Peta lokasi Kafe Brise berdekatan POLIJE" width="300">
+            </div>
+            
+            <!-- Informasi teks di sebelah kanan -->
+            <div>
+                <ul>
+                    <li><strong>Alamat:</strong> Samping Pintu Masuk POLIJE, Jl. Mastrip, Krajan Timur, Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur 68124</li>
+                    <li><strong>Waktu Operasi:</strong> Buka 08.00 - 02.00</li>
+                    <li><strong>Telefon:</strong> 085151947909</li>
+                </ul>
+            </div>
+        </section>
+        </main>
+        <footer>
+            <h2>BRISE.</h2>
+            <h4>Menu</h4>
+            <nav> <!--Navigasi untuk menu-->
+                <ul>
+                    <li><a href="..">Pastry & Bakery</a></li>
+                    <li><a href="..">Drinks</a></li>
+                    <li><a href="..">Foods</a></li>
+                </ul>
+            </nav>
+            <h4>Info Brise</h4>
+            <nav> <!--Navigasi untuk info Brise-->
+                <ul>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="promo.html">Promo</a></li>
+                    <li><a href="popup_layanan.html">Layanan</a></li>
+                    <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
+                </ul>
+            </nav>
+            <h4>Contact Us</h4>
+            <nav> <!--Navigasi untuk kontak-->
+                <ul>
+                    <li><a href="..">email@gmail.com</a></li>
+                     <li><a href="..">Instagram</a></li>
+                </ul> 
+            </nav>
+        </footer>    
+    </body>
 </html>
