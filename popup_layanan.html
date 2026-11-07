@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Layanan Reservasi | BRISE.</title>
+    </head>
+    <body>
+        <header>
+            <a href="index.html">Kembali</a>
+        </header>
+
+        <main>
+            <h1>LAYANAN RESERVASI</h1>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+                <p>
+                    <label for="nama">Nama</label><br />
+                    <input
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        placeholder="Masukkan nama lengkap"
+                        autocomplete="name"
+                        required
+                    />
+                </p>
+
+                <p>
+                    <label for="bukti-pembayaran">Bukti Pembayaran</label><br />
+                    <input
+                        type="file"
+                        id="bukti-pembayaran"
+                        name="bukti-pembayaran"
+                        accept="image/*,.pdf"
+                        required
+                    />
+                </p>
+
+                <p>
+                    <label for="telepon">No-telp</label><br />
+                    <input
+                        type="tel"
+                        id="telepon"
+                        name="telepon"
+                        placeholder="Masukkan nomor telepon"
+                        autocomplete="tel"
+                        required
+                    />
+                </p>
+
+                <p>
+                    <label for="rencana-reservasi">Rencana Reservasi</label><br />
+                    <select id="rencana-reservasi" name="rencana-reservasi" required>
+                        <option value="" selected disabled>Pilih rencana reservasi</option>
+                        <option value="meja">Reservasi meja</option>
+                        <option value="acara">Reservasi acara</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="tempat-reservasi">Tempat Reservasi</label><br />
+                    <select id="tempat-reservasi" name="tempat-reservasi" required>
+                        <option value="" selected disabled>Pilih tempat reservasi</option>
+                        <option value="indoor">Area indoor</option>
+                        <option value="outdoor">Area outdoor</option>
+                        <option value="meeting">Ruang Meeting</option>
+                    </select>
+                </p>
+
+                <button type="submit">Kirim</button>
+            </form>
+        </main>
+    </body>
+</html>

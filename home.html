@@ -16,7 +16,8 @@
                     <li><a href="home.html">Home</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="promo.html">Promo</a></li>
-                    <li><a href="popup_layanan.html">Layanan</a></li>
+                    <!-- Tombol ini membuka elemen yang memiliki id="layanan-popup". -->
+                    <li><button type="button" popovertarget="layanan-popup">Layanan</button></li>
                     <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
                 </ul>
             </nav>
@@ -153,7 +154,8 @@
                     <li><a href="home.html">Home</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="promo.html">Promo</a></li>
-                    <li><a href="popup_layanan.html">Layanan</a></li>
+                    <!-- Tombol Layanan di footer membuka pop-up yang sama. -->
+                    <li><button type="button" popovertarget="layanan-popup">Layanan</button></li>
                     <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
                 </ul>
             </nav>
@@ -164,6 +166,84 @@
                      <li><a href="..">Instagram</a></li>
                 </ul> 
             </nav>
-        </footer>    
+        </footer>
+
+        <!-- Elemen ini menjadi pop-up karena memiliki atribut popover. -->
+        <!-- Nilai id harus sama dengan nilai popovertarget pada tombol Layanan. -->
+        <section id="layanan-popup" popover>
+            <!-- Tombol ini menutup pop-up yang id-nya disebutkan di popovertarget. -->
+            <!-- popovertargetaction="hide" menentukan bahwa aksinya adalah menutup. -->
+            <button type="button" popovertarget="layanan-popup" popovertargetaction="hide">
+                Back
+            </button>
+
+            <!-- Judul yang ditampilkan di bagian atas pop-up. -->
+            <h2>LAYANAN RESERVASI</h2>
+
+            <!-- Form mengelompokkan semua kolom data reservasi. -->
+            <!-- action="#" belum mengirim data ke server; method="post" menentukan metode pengiriman. -->
+            <!-- enctype diperlukan agar file bukti pembayaran ikut dikirim saat backend tersedia. -->
+            <form action="#" method="post" enctype="multipart/form-data">
+                <!-- Paragraf ini mengelompokkan label dan kolom nama. -->
+                <p>
+                    <!-- for harus sama dengan id kolom agar label terhubung dengannya. -->
+                    <label for="nama">Nama</label><br>
+                    <!-- type="text" menerima teks, name menjadi nama data, placeholder memberi petunjuk. -->
+                    <!-- required membuat kolom wajib diisi sebelum formulir dikirim. -->
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+                </p>
+
+                <!-- Bagian untuk memilih berkas bukti pembayaran. -->
+                <p>
+                    <!-- Label ini terhubung ke kolom berkas melalui atribut for dan id. -->
+                    <label for="bukti-pembayaran">Bukti Pembayaran</label><br>
+                    <!-- type="file" membuka pemilih berkas; accept membatasi jenis berkas yang disarankan. -->
+                    <input type="file" id="bukti-pembayaran" name="bukti-pembayaran" accept="image/*,.pdf" required>
+                </p>
+
+                <!-- Bagian untuk memasukkan nomor telepon. -->
+                <p>
+                    <!-- Label terhubung ke kolom telepon melalui for dan id. -->
+                    <label for="telepon">No-telp</label><br>
+                    <!-- type="tel" menandai input sebagai nomor telepon; required mewajibkan isian. -->
+                    <input type="tel" id="telepon" name="telepon" placeholder="Masukkan nomor telepon" required>
+                </p>
+
+                <!-- Bagian untuk memilih rencana reservasi dari daftar. -->
+                <p>
+                    <!-- Label ini terhubung dengan daftar pilihan di bawahnya. -->
+                    <label for="rencana-reservasi">Rencana Reservasi</label><br>
+                    <!-- select membuat menu pilihan; required meminta pengguna memilih salah satu opsi. -->
+                    <select id="rencana-reservasi" name="rencana-reservasi" required>
+                        <!-- Opsi petunjuk tidak dapat dipilih sebagai pilihan valid. -->
+                        <option value="" selected disabled>Pilih rencana reservasi</option>
+                        <!-- value adalah nilai yang akan dikirim untuk pilihan reservasi meja. -->
+                        <option value="meja">Reservasi meja</option>
+                        <!-- value adalah nilai yang akan dikirim untuk pilihan reservasi acara. -->
+                        <option value="acara">Reservasi acara</option>
+                    </select>
+                </p>
+
+                <!-- Bagian untuk memilih tempat reservasi. -->
+                <p>
+                    <!-- Label ini terhubung ke daftar tempat melalui for dan id. -->
+                    <label for="tempat-reservasi">Tempat Reservasi</label><br>
+                    <!-- Daftar pilihan tempat; required meminta satu pilihan yang valid. -->
+                    <select id="tempat-reservasi" name="tempat-reservasi" required>
+                        <!-- Opsi petunjuk yang tidak bisa dipilih sebagai jawaban. -->
+                        <option value="" selected disabled>Pilih tempat reservasi</option>
+                        <!-- value menjadi nilai data untuk pilihan area indoor. -->
+                        <option value="indoor">Area indoor</option>
+                        <!-- value menjadi nilai data untuk pilihan area outdoor. -->
+                        <option value="outdoor">Area outdoor</option>
+                        <!-- value menjadi nilai data untuk pilihan ruang meeting. -->
+                        <option value="meeting">Ruang Meeting</option>
+                    </select>
+                </p>
+
+                <!-- Tombol submit mencoba mengirim formulir; penyimpanan membutuhkan backend. -->
+                <button type="submit">Kirim</button>
+            </form>
+        </section>
     </body>
 </html>
