@@ -37,9 +37,15 @@
             <section> <!-- Bagian 2 daftar promo terbaru -->
                 <h3>Promo Terbaru</h3>
                 <div class="daftar-promo-terbaru">
+                    <button type="button" popovertarget="popup-promo" class="promo-trigger">
                     <img src="images/promo1.png" alt="Promo 1" class="promo-image" width="250" />
+                    </button>
+                    <button type="button" popovertarget="popup-promo" class="promo-trigger">
                     <img src="images/promo2.png" alt="Promo 2" class="promo-image" width="250" />
-                    <img src="images/promo3.png" alt="Promo 3" class="promo-image" width="250" />  
+                    </button>
+                    <button type="button" popovertarget="popup-promo" class="promo-trigger">
+                    <img src="images/promo3.png" alt="Promo 3" class="promo-image" width="250" />
+                    </button>
                 </div>
             </section>
         </main>
@@ -152,5 +158,24 @@
                 <button type="submit">Kirim</button>
             </form>
         </section>
+        <article id="popup-promo" popover class="discount-popup">
+            <button type="button" popovertarget="popup-promo" popovertargetaction="hide" class="back-button">Back</button>
+            <div class="popup-content">
+                <div class="left-section">
+                    <img src="images/promo1.png" alt="Kopi" class="product-image" width="250" />
+                    <div class="price-section">
+                        <span class="original-price">Rp. 99.999</span>
+                        <span class="discounted-price">Rp. 79.999</span>
+                    </div>
+                </div>
+                <div class="right-section">
+                    <h2>Coffee</h2>
+                    <p>Diskon <strong class="discount-percent">20%</strong></p>
+                    <p>Beli sekarang juga</p>
+                    <p class="promo-period">Periode 7-8 Januari 2222</p>
+                    <button type="button" class="order-now-button">Order Now</button>
+                </div>
+            </div>
+        </article>
     </body>
 </html>
