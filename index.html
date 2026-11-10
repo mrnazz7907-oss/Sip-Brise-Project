@@ -4,12 +4,70 @@
         <meta charset="UTF-8" /> <!--Mengizinkan browser membaca semua jenis karakter teks dan simbol-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--Menunjukan viewport untuk tampilan responsif-->
         <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Aoboshi+One&display=swap" rel="stylesheet">
         <title>Welcome Good Brise</title>
+        <style>
+            body {
+                background-color: #FDE9E8;
+                margin: 0;
+                padding: 0;
+            }
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                border-bottom: 2px solid #000000;
+                box-sizing: border-box;
+            }
+            nav ul{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+                margin: 0; 
+                list-style: none;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: #9E2C2C;
+                font-weight: bold;
+                padding: 5px 20px;
+                transition: background-color 0.3s, color 0.3s;
+                font-family: Anek tamil, sans-serif;
+                font-size: 24px;
+            }
+             nav ul li button {
+                text-decoration: none;
+                color: #9E2C2C;
+                font-weight: bold;
+                padding: 5px 20px;
+                border: none;
+                background-color: transparent;
+                transition: background-color 0.3s, color 0.3s;
+                font-family: Anek tamil, sans-serif;
+                font-size: 24px;
+                cursor: pointer;
+            }
+            nav ul li a:hover, 
+            nav ul li button:hover {
+            color: #471212; 
+            }
+        </style>
+        <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header> <!--Header untuk menampilkan logo, navigasi, dan kolom pencarian-->
+        <header style="display: flex;"> <!--Header untuk menampilkan logo, navigasi, dan kolom pencarian-->
             <!--Logo-->
-            <h2>BRISE.</h2> 
+            <h2 style="color: #9E2C2C; font-size: 58px;">BRISE.</h2>
             <!--Navigasi dengan menggunakan tag link href dan unordered list-->
             <nav>
                 <ul>
@@ -28,12 +86,12 @@
                 <button type="submit">Cari</button>
             </div>
         </header>
-        <hr> <!--Garis pembatas-->
+       
         <main>  <!--Main untuk menampilkan konten utama-->
-        <section> <!--Section untuk menampilkan bagian konten tertentu-->
-            <h1>Good Coffee</h1>
-            <h1>Good Mood</h1>
-            <h1>Good Brise</h1>
+        <section style="text-align: center;"> <!--Section untuk menampilkan bagian konten tertentu-->
+            <h1 style="font-family: 'Aoboshi One', serif;">Good Coffee</h1>
+            <h1 style="font-family: 'Annie Use Your Telescope', cursive;">Good Mood</h1>
+            <h1 style="font-family: 'Birthstone', cursive;"><i>Good Brise</i></h1>
             <a href="home.html"><button>Get Started</button></a>
         </section>
         </main>
