@@ -61,6 +61,46 @@
             nav ul li button:hover {
             color: #471212; 
             }
+            .hero-section {
+                text-align: center;
+                display: flex;
+        flex-direction: column; /* Menyusun tulisan ke bawah */
+        align-items: center;    /* Membuat semua elemen rata tengah */
+        gap: 10px;
+            }
+            .title-coffe {
+                font-family: 'Aoboshi One', serif;
+        font-size: 56px;
+        font-weight: bold;
+    }
+    .title-mood {
+        font-family: 'Annie Use Your Telescope', cursive;
+        font-size: 64px;
+    }
+    .title-brise {
+        font-family: 'Birthstone', cursive;
+        font-size: 72px;
+        font-style: italic;
+    }
+    .get-started-btn {
+      background-color: #9E2C2C; /* Merah marun sesuai warna BRISE */
+        color: white;
+        border: none;
+        padding: 12px 35px;
+        border-radius: 30px; /* Mengubah tombol kotak jadi kapsul */
+        font-size: 20px;
+        font-family: 'Anek Tamil', sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 25px;
+        margin-bottom: 25px; /* Jarak ekstra dari teks di atasnya */
+        transition: background-color 0.3s, transform 0.2s;
+    }
+    .get-started-btn:hover {
+        background-color: #471212;
+        transform: scale(1.03); /* Efek membesar sedikit saat ditunjuk kursor */
+    }
+
         </style>
         <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
     </head>
@@ -88,11 +128,13 @@
         </header>
        
         <main>  <!--Main untuk menampilkan konten utama-->
-        <section style="text-align: center;"> <!--Section untuk menampilkan bagian konten tertentu-->
-            <h1 style="font-family: 'Aoboshi One', serif;">Good Coffee</h1>
-            <h1 style="font-family: 'Annie Use Your Telescope', cursive;">Good Mood</h1>
-            <h1 style="font-family: 'Birthstone', cursive;"><i>Good Brise</i></h1>
-            <a href="home.html"><button>Get Started</button></a>
+        <section class="hero-section"> <!--Section untuk menampilkan bagian konten tertentu-->
+            <h1 class="title-coffe">Good Coffee</h1>
+            <h1 class="title-mood">Good Mood</h1>
+            <h1 class="title-brise">Good Brise</h1>
+            <a href="home.html" style="text-decoration: none;">
+                <button class="get-started-btn">Get Started</button>
+            </a>
         </section>
         </main>
         <hr> <!--Garis pembatas-->
