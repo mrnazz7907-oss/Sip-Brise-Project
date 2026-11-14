@@ -9,6 +9,30 @@
         <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Aoboshi+One&display=swap" rel="stylesheet">
         <title>Welcome Good Brise</title>
         <style>
+            .main-based {
+                width: 100%;
+                min-height: 85vh;
+                padding-top: 110px;
+                padding-bottom: 60px;
+                background-image: 
+                    url("images/kota.kiri.png"),
+                    url("images/awan.1.png"),
+                    url("images/kota.kanan.png");
+                background-repeat: no-repeat;
+               background-position: 
+        left 20px top 110px,     /* Gedung kiri: mulai di bawah header */
+        right 50px top 130px,    /* Awan kanan */
+        right 20px top 430px;    /* Kota kanan bawah: geser angka 430px agar pas di atas footer */
+
+    /* 3. Atur ukuran masing-masing gambar */
+    background-size: 
+        130px auto,
+        240px auto,
+        280px auto;
+
+    /* 4. Trik otomatis menghilangkan kotak putih pada gambar agar menyatu dengan background pink */
+    background-blend-mode: multiply;            
+            }
             .title-coffe {
                 font-family: 'Aoboshi One', serif;
                 font-size: 56px;
@@ -41,6 +65,7 @@
                 background-color: #471212;
                 transform: scale(1.03); /* Efek membesar sedikit saat ditunjuk kursor */
             }
+
         </style>
         <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
     </head>
@@ -69,7 +94,7 @@
             </div>
         </header>
        
-        <main>  <!--Main untuk menampilkan konten utama-->
+        <main class="main-based">  <!--Main untuk menampilkan konten utama-->
         <section class="hero-section"> <!--Section untuk menampilkan bagian konten tertentu-->
             <h1 class="title-coffe">Good Coffee</h1>
             <h1 class="title-mood">Good Mood</h1>
