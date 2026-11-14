@@ -1,17 +1,11 @@
+
 <!DOCTYPE html>
-<html lang="id"> <!--Menunjukan bahasanya adalah Bahasa Indonesia-->
-    <head>
-        <meta charset="UTF-8" /> <!--Mengizinkan browser membaca semua jenis karakter teks dan simbol-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--Menunjukan viewport untuk tampilan responsif-->
-        <link rel="stylesheet" href="style.css">
-        <title>Home Brise</title>
-        <style>
-            body {
-                background-color: #FDE9E8;
-            }
-        </style>
-    </head>
-    
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Brise</title>
+
 <style>
 * {
     margin: 0;
@@ -35,6 +29,7 @@ button {
     cursor: pointer;
 }
 
+/* HEADER */
 header {
     display: flex;
     align-items: center;
@@ -44,18 +39,19 @@ header {
     background: white;
 }
 
-header h2, footer h2 {
+header h2 {
     color: #a71919;
 }
 
-header nav ul, footer nav ul {
+header nav ul {
     display: flex;
     align-items: center;
     gap: 15px;
     list-style: none;
 }
 
-header nav a, header nav button, footer nav a, footer nav button {
+header nav a,
+header nav button {
     color: #a71919;
     font-size: 12px;
     background: none;
@@ -83,6 +79,7 @@ hr {
     margin: 8px 0;
 }
 
+/* HERO SECTION */
 #hero-slider {
     padding: 25px;
     min-height: 280px;
@@ -103,8 +100,12 @@ hr {
     display: flex;
 }
 
-.slide-item div:first-child {
+.slide-item > div:first-child {
     flex: 1;
+}
+
+.slide-item > div:last-child {
+    width: 32%;
 }
 
 .slide-item small {
@@ -143,29 +144,13 @@ hr {
 }
 
 .slide-item img {
-    width: 48%;
+    width: 100%;
     height: 230px;
     object-fit: cover;
     border-radius: 15px;
 }
 
-#hero-slider > div:last-child {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 15px;
-}
-
-#hero-slider > div:last-child button {
-    width: 30px;
-    height: 30px;
-    margin-left: 5px;
-    color: #a30e0e;
-    background: white;
-    border: none;
-    border-radius: 50%;
-}
-
+/* PRODUK BARU */
 main > section:nth-of-type(2),
 main > section:nth-of-type(3),
 #lokasi {
@@ -198,6 +183,7 @@ main > section:nth-of-type(2) img {
     border-radius: 15px;
 }
 
+/* BRISE MENU */
 main > section:nth-of-type(3) {
     text-align: center;
     background: #e8ddc8;
@@ -240,6 +226,7 @@ main > section:nth-of-type(3) article a {
     text-decoration: underline;
 }
 
+/* LOKASI */
 #lokasi {
     display: flex;
     align-items: center;
@@ -273,111 +260,162 @@ main > section:nth-of-type(3) article a {
     line-height: 1.5;
 }
 
+/* FOOTER */
 footer {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 20px;
     margin-top: 15px;
-    padding: 25px 15px;
+    padding: 15px;
     background: white;
     border-top: 1px solid #aaa;
 }
 
-footer h2 {
+.footer-brand h2 {
+    color: #a71919;
     font-size: 30px;
 }
 
-footer h4 {
+.footer-column h4 {
     margin-bottom: 10px;
+    color: #a71919;
     font-size: 16px;
 }
 
-footer nav ul {
+.footer-column nav ul {
     display: block;
+    list-style: none;
 }
 
-footer nav li {
+.footer-column nav li {
     margin-bottom: 7px;
 }
 
-
-
+/* RESPONSIVE HP */
 @media screen and (max-width: 600px) {
+
     body {
         padding: 5px;
     }
 
+    /* HEADER */
     header {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap: 4px;
+        padding: 8px 5px;
     }
 
-    header nav {
-        width: 100%;
+    header h2 {
+        font-size: 15px;
     }
 
     header nav ul {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+
+    header nav a,
+    header nav button {
+        font-size: 6px;
     }
 
     header > div {
         display: flex;
-        width: 100%;
+        align-items: center;
+        width: auto;
+        gap: 2px;
     }
 
     header input {
-        flex: 1;
+        width: 55px;
+        padding: 4px;
+        font-size: 7px;
     }
 
+    header div button {
+        padding: 4px 6px;
+        font-size: 7px;
+    }
+
+    /* HERO SECTION */
     #hero-slider {
         min-height: 0;
-        padding: 18px;
+        padding: 12px;
+        border-radius: 15px;
     }
 
     .slide-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .slide-item > div:first-child {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .slide-item > div:last-child {
+        width: 46%;
+    }
+
+    .slide-item small {
+        padding: 4px 7px;
+        font-size: 5px;
     }
 
     .slide-item h1 {
-        font-size: 25px;
+        margin: 8px 0;
+        font-size: 16px;
     }
 
     .slide-item p {
-        font-size: 11px;
+        margin-bottom: 7px;
+        font-size: 6px;
+        line-height: 1.5;
+    }
+
+    .slide-item a button {
+        padding: 5px 6px;
+        margin-right: 2px;
+        font-size: 5px;
     }
 
     .slide-item img {
         width: 100%;
-        height: 160px;
+        height: 96px;
+        border-radius: 8px;
     }
 
+    /* PRODUK BARU */
     main > section:nth-of-type(2) {
-        padding: 20px;
+        padding: 18px;
     }
 
     main > section:nth-of-type(2) h2 {
-        font-size: 20px;
+        margin-bottom: 15px;
+        font-size: 14px;
     }
 
     main > section:nth-of-type(2) > div {
-        gap: 10px;
+        gap: 12px;
     }
 
     main > section:nth-of-type(2) img {
-        height: 130px;
+        width: 32%;
+        height: 132px;
+        border-radius: 8px;
     }
 
+    /* BRISE MENU */
     main > section:nth-of-type(3) {
-        padding: 20px;
+        padding: 18px;
     }
 
     main > section:nth-of-type(3) h2 {
-        font-size: 22px;
+        margin-bottom: 18px;
+        font-size: 18px;
     }
 
     main > section:nth-of-type(3) > div {
@@ -385,284 +423,354 @@ footer nav li {
     }
 
     main > section:nth-of-type(3) article img {
-        height: 130px;
+        height: 132px;
+        border-radius: 8px;
     }
 
     main > section:nth-of-type(3) article h3 {
-        font-size: 12px;
+        margin-top: 8px;
+        font-size: 11px;
     }
 
+    /* LOKASI */
     #lokasi {
-        gap: 10px;
+        flex-direction: row;
+        gap: 8px;
         padding: 10px;
     }
 
+    #lokasi > div:first-child {
+        flex: 0 0 40%;
+    }
+
+    #lokasi > div:last-child {
+        flex: 1;
+        min-width: 0;
+    }
+
     #lokasi img {
-        height: 140px;
+        height: 110px;
+        border-radius: 12px;
     }
 
     #lokasi li {
-        margin-bottom: 8px;
-        font-size: 10px;
-    }
-
-    footer {
-        gap: 10px;
-        padding: 15px 8px;
-    }
-
-    footer h2 {
-        font-size: 18px;
-    }
-
-    footer h4 {
-        font-size: 10px;
-    }
-
-    footer nav a, footer nav button {
+        margin-bottom: 5px;
         font-size: 8px;
+        line-height: 1.4;
+    }
+
+    /* FOOTER */
+    footer {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 5px;
+        padding: 12px 5px;
+    }
+
+    .footer-brand h2 {
+        font-size: 17px;
+    }
+
+    .footer-column h4 {
+        margin-bottom: 5px;
+        font-size: 8px;
+    }
+
+    .footer-column nav ul {
+        display: block;
+    }
+
+    .footer-column nav li {
+        margin-bottom: 4px;
+    }
+
+    .footer-column nav a,
+    .footer-column nav button {
+        font-size: 6px;
     }
 }
 </style>
-    <body>
-         <header> <!--Header untuk menampilkan logo, navigasi, dan kolom pencarian-->
-            <!--Logo-->
-            <h2>BRISE.</h2> 
-            <!--Navigasi dengan menggunakan tag link href dan unordered list-->
-            <nav>
-                <ul>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="promo.html">Promo</a></li>
-                    <!-- Tombol ini membuka elemen yang memiliki id="layanan-popup". -->
-                    <li><button type="button" popovertarget="layanan-popup">Layanan</button></li>
-                    <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
-                </ul>
-            </nav>
-            <!--Kolom Pencarian dan menggunakan placeholder-->
+</head>
+
+<body>
+
+<header>
+    <h2>BRISE.</h2>
+
+    <nav>
+        <ul>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="promo.html">Promo</a></li>
+            <li>
+                <button type="button" popovertarget="layanan-popup">
+                    Layanan
+                </button>
+            </li>
+            <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <input type="text" placeholder="Cari...">
+        <button type="submit">Cari</button>
+    </div>
+</header>
+
+<hr>
+
+<main>
+
+    <section id="hero-slider">
+
+        <div class="slide-item">
             <div>
-                <input type="text" placeholder="Cari..." />
-                <button type="submit">Cari</button>
-            </div>
-        </header>
-        <hr> <!--Garis pembatas-->
-        <main> <!--Main untuk menampilkan konten utama-->
-          <!-- Bagian 1: Hero Section (Slider) -->
-        <section id="hero-slider">
-            
-            <!-- SLIDE 1: Morning Brew -->
-            <div class="slide-item">
-                <div>
-                    <p><small>NEW ARRIVAL</small></p>
-                    <h1>The Perfect Morning Brew</h1>
-                    <p>Experience our signature cold brew and seasonal single-origin pour-overs, roasted to perfection in our local facility.</p>
-                    <a href="menu.html"><button>Explore Menu</button></a> 
-                    <a href="https://maps.app.goo.gl/uPf5CsW4v4Je8NDR6"><button>View Locations</button></a>
-                </div>
-                <div>
-                    <img src="images/kopi.hangat.png" alt="Secangkir kopi panas" width="400">
-                </div>
+                <p><small>NEW ARRIVAL</small></p>
+                <h1>The Perfect Morning Brew</h1>
+                <p>Experience our signature cold brew and seasonal single-origin pour-overs, roasted to perfection in our local facility.</p>
+
+                <a href="menu.html">
+                    <button>Explore Menu</button>
+                </a>
+
+                <a href="https://maps.app.goo.gl/uPf5CsW4v4Je8NDR6">
+                    <button>View Locations</button>
+                </a>
             </div>
 
-            <!-- SLIDE 2: Freshly Baked -->
-            <div class="slide-item">
-                <div>
-                    <p><small>FRESHLY BAKED</small></p>
-                    <h1>Freshly Baked Every Morning</h1>
-                    <p>Discover our golden, buttery croissants and fresh pastries, baked every morning for the perfect coffee companion.</p>
-                    <a href="menu.html"><button>Explore Menu</button></a> 
-                    <a href="https://maps.app.goo.gl/uPf5CsW4v4Je8NDR6"><button>View Locations</button></a>
-                </div>
-                <div>
-                    <img src="images/roti.png" alt="Roti Croissant" width="400">
-                </div>
-            </div>
-
-            <!-- SLIDE 3: Cold Brew -->
-            <div class="slide-item">
-                <div>
-                    <p><small>BREWED SLOW</small></p>
-                    <h1>Your Daily Cold Brew</h1>
-                    <p>Cool down with our slow-steeped cold brew, served over ice for a smooth, refreshing sip from the first drop to the last.</p>
-                    <a href="menu.html"><button>Explore Menu</button></a> 
-                    <a href="https://maps.app.goo.gl/uPf5CsW4v4Je8NDR6"><button>View Locations</button></a>
-                </div>
-                <div>
-                    <img src="images/kopi.dingin.png" alt="Es kopi cold brew" width="400">
-                </div>
-            </div>
-
-            <!-- Tombol Navigasi Slider (Titik dan Panah) -->
             <div>
-                <!-- Titik-titik (Dots) di kiri bawah -->
-                <span>&#8226; &#8226; &#8226;</span> 
-                
-                <!-- Tombol panah di kanan bawah -->
-                <!-- &lt; adalah kode HTML untuk simbol < (kiri) -->
-                <!-- &gt; adalah kode HTML untuk simbol > (kanan) -->
-                <button>&lt;</button>
-                <button>&gt;</button>
+                <img src="images/kopi.hangat.png" alt="Secangkir kopi panas">
             </div>
-        </section>
-        <hr> <!--Garis pembatas-->
-        <!-- Bagian 2: Produk Baru -->
-        <section>
-            <h2>Produk Baru</h2>
-            <!-- Kumpulan gambar produk baru -->
+        </div>
+
+        <div class="slide-item">
             <div>
-                <img src="images/spageti.baru.png" alt="Spageti Baru" width="200">
-                <img src="images/roti.baru.png" alt="Roti Baru" width="200">
-                <img src="images/minuman.baru.png" alt="Minuman Baru" width="200">
+                <p><small>FRESHLY BAKED</small></p>
+                <h1>Freshly Baked Every Morning</h1>
+                <p>Discover our golden, buttery croissants and fresh pastries, baked every morning for the perfect coffee companion.</p>
+
+                <a href="menu.html">
+                    <button>Explore Menu</button>
+                </a>
+
+                <a href="https://maps.app.goo.gl/uPf5CsW4v4Je8NDR6">
+                    <button>View Locations</button>
+                </a>
             </div>
-        </section>
-        <hr> <!--Garis pembatas-->
-        <!-- Bagian 3: Menu berdasaarkan kategori -->
-         <section>
-            <h2>Brise. Menu</h2>
-            <!-- Kita menggunakan tag <article> kerana setiap item adalah entiti menu yang berdiri sendiri -->
+
             <div>
-                <article>
-                    <img src="images/drinks.png" alt="Minuman Ais" width="150">
-                    <h3><a href="menu.html#drinks">Drinks</a></h3>
-                </article>
-                
-                <article>
-                    <img src="images/foods.png" alt="Makanan Spaghetti" width="150">
-                    <h3><a href="menu.html#foods">Foods</a></h3>
-                </article>
-
-                <article>
-                    <img src="images/bakery.png" alt="Roti dan Pastri" width="150">
-                    <h3><a href="menu.html#bakery">Bakery & Pastry</a></h3>
-                </article>
+                <img src="images/roti.png" alt="Roti Croissant">
             </div>
-         </section>
-         <hr> <!--Garis pembatas-->
-        <!-- Bagian 4: Peta lokasi dan informasi -->
-         <section id="lokasi">
-            <!-- Gambar Peta di sebelah kiri -->
+        </div>
+
+        <div class="slide-item">
             <div>
-                <img src="images/peta.lokasi.png" alt="Peta lokasi Kafe Brise berdekatan POLIJE" width="300">
+                <p><small>BREWED SLOW</small></p>
+                <h1>Your Daily Cold Brew</h1>
+                <p>Cool down with our slow-steeped cold brew, served over ice for a smooth, refreshing sip from the first drop to the last.</p>
+
+                <a href="menu.html">
+                    <button>Explore Menu</button>
+                </a>
+
+                <a href="https://maps.app.goo.gl/uPf5CsW4v4Je8NDR6">
+                    <button>View Locations</button>
+                </a>
             </div>
-            
-            <!-- Informasi teks di sebelah kanan -->
+
             <div>
-                <ul>
-                    <li><strong>Alamat:</strong> Samping Pintu Masuk POLIJE, Jl. Mastrip, Krajan Timur, Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur 68124</li>
-                    <li><strong>Waktu Operasi:</strong> Buka 08.00 - 02.00</li>
-                    <li><strong>Telefon:</strong> 085151947909</li>
-                </ul>
+                <img src="images/kopi.dingin.png" alt="Es kopi cold brew">
             </div>
-        </section>
-        </main>
-        <footer>
-            <h2>BRISE.</h2>
-            <h4>Menu</h4>
-            <nav> <!--Navigasi untuk menu-->
-                <ul>
-                    <li><a href="..">Pastry & Bakery</a></li>
-                    <li><a href="..">Drinks</a></li>
-                    <li><a href="..">Foods</a></li>
-                </ul>
-            </nav>
-            <h4>Info Brise</h4>
-            <nav> <!--Navigasi untuk info Brise-->
-                <ul>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="promo.html">Promo</a></li>
-                    <!-- Tombol Layanan di footer membuka pop-up yang sama. -->
-                    <li><button type="button" popovertarget="layanan-popup">Layanan</button></li>
-                    <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
-                </ul>
-            </nav>
-            <h4>Contact Us</h4>
-            <nav> <!--Navigasi untuk kontak-->
-                <ul>
-                    <li><a href="..">email@gmail.com</a></li>
-                     <li><a href="..">Instagram</a></li>
-                </ul> 
-            </nav>
-        </footer>
+        </div>
 
-        <!-- Elemen ini menjadi pop-up karena memiliki atribut popover. -->
-        <!-- Nilai id harus sama dengan nilai popovertarget pada tombol Layanan. -->
-        <section id="layanan-popup" popover>
-            <!-- Tombol ini menutup pop-up yang id-nya disebutkan di popovertarget. -->
-            <!-- popovertargetaction="hide" menentukan bahwa aksinya adalah menutup. -->
-            <button type="button" popovertarget="layanan-popup" popovertargetaction="hide">
-                Back
-            </button>
+    </section>
 
-            <!-- Judul yang ditampilkan di bagian atas pop-up. -->
-            <h2>LAYANAN RESERVASI</h2>
+    <hr>
 
-            <!-- Form mengelompokkan semua kolom data reservasi. -->
-            <!-- action="#" belum mengirim data ke server; method="post" menentukan metode pengiriman. -->
-            <!-- enctype diperlukan agar file bukti pembayaran ikut dikirim saat backend tersedia. -->
-            <form action="#" method="post" enctype="multipart/form-data">
-                <!-- Paragraf ini mengelompokkan label dan kolom nama. -->
-                <p>
-                    <!-- for harus sama dengan id kolom agar label terhubung dengannya. -->
-                    <label for="nama">Nama</label><br>
-                    <!-- type="text" menerima teks, name menjadi nama data, placeholder memberi petunjuk. -->
-                    <!-- required membuat kolom wajib diisi sebelum formulir dikirim. -->
-                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
-                </p>
+    <section>
+        <h2>Produk Baru</h2>
 
-                <!-- Bagian untuk memilih berkas bukti pembayaran. -->
-                <p>
-                    <!-- Label ini terhubung ke kolom berkas melalui atribut for dan id. -->
-                    <label for="bukti-pembayaran">Bukti Pembayaran</label><br>
-                    <!-- type="file" membuka pemilih berkas; accept membatasi jenis berkas yang disarankan. -->
-                    <input type="file" id="bukti-pembayaran" name="bukti-pembayaran" accept="image/*,.pdf" required>
-                </p>
+        <div>
+            <img src="images/spageti.baru.png" alt="Spageti Baru">
+            <img src="images/roti.baru.png" alt="Roti Baru">
+            <img src="images/minuman.baru.png" alt="Minuman Baru">
+        </div>
+    </section>
 
-                <!-- Bagian untuk memasukkan nomor telepon. -->
-                <p>
-                    <!-- Label terhubung ke kolom telepon melalui for dan id. -->
-                    <label for="telepon">No-telp</label><br>
-                    <!-- type="tel" menandai input sebagai nomor telepon; required mewajibkan isian. -->
-                    <input type="tel" id="telepon" name="telepon" placeholder="Masukkan nomor telepon" required>
-                </p>
+    <hr>
 
-                <!-- Bagian untuk memilih rencana reservasi dari daftar. -->
-                <p>
-                    <!-- Label ini terhubung dengan daftar pilihan di bawahnya. -->
-                    <label for="rencana-reservasi">Rencana Reservasi</label><br>
-                    <!-- select membuat menu pilihan; required meminta pengguna memilih salah satu opsi. -->
-                    <select id="rencana-reservasi" name="rencana-reservasi" required>
-                        <!-- Opsi petunjuk tidak dapat dipilih sebagai pilihan valid. -->
-                        <option value="" selected disabled>Pilih rencana reservasi</option>
-                        <!-- value adalah nilai yang akan dikirim untuk pilihan reservasi meja. -->
-                        <option value="meja">Reservasi meja</option>
-                        <!-- value adalah nilai yang akan dikirim untuk pilihan reservasi acara. -->
-                        <option value="acara">Reservasi acara</option>
-                    </select>
-                </p>
+    <section>
+        <h2>Brise. Menu</h2>
 
-                <!-- Bagian untuk memilih tempat reservasi. -->
-                <p>
-                    <!-- Label ini terhubung ke daftar tempat melalui for dan id. -->
-                    <label for="tempat-reservasi">Tempat Reservasi</label><br>
-                    <!-- Daftar pilihan tempat; required meminta satu pilihan yang valid. -->
-                    <select id="tempat-reservasi" name="tempat-reservasi" required>
-                        <!-- Opsi petunjuk yang tidak bisa dipilih sebagai jawaban. -->
-                        <option value="" selected disabled>Pilih tempat reservasi</option>
-                        <!-- value menjadi nilai data untuk pilihan area indoor. -->
-                        <option value="indoor">Area indoor</option>
-                        <!-- value menjadi nilai data untuk pilihan area outdoor. -->
-                        <option value="outdoor">Area outdoor</option>
-                        <!-- value menjadi nilai data untuk pilihan ruang meeting. -->
-                        <option value="meeting">Ruang Meeting</option>
-                    </select>
-                </p>
+        <div>
+            <article>
+                <img src="images/drinks.png" alt="Minuman Ais">
+                <h3><a href="menu.html#drinks">Drinks</a></h3>
+            </article>
 
-                <!-- Tombol submit mencoba mengirim formulir; penyimpanan membutuhkan backend. -->
-                <button type="submit">Kirim</button>
-            </form>
-        </section>
-    </body>
+            <article>
+                <img src="images/foods.png" alt="Makanan Spaghetti">
+                <h3><a href="menu.html#foods">Foods</a></h3>
+            </article>
+
+            <article>
+                <img src="images/bakery.png" alt="Roti dan Pastri">
+                <h3><a href="menu.html#bakery">Bakery & Pastry</a></h3>
+            </article>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="lokasi">
+        <div>
+            <img src="images/peta.lokasi.png" alt="Peta lokasi Kafe Brise berdekatan POLIJE">
+        </div>
+
+        <div>
+            <ul>
+                <li>
+                    <strong>Alamat:</strong>
+                    Samping Pintu Masuk POLIJE, Jl. Mastrip,
+                    Krajan Timur, Sumbersari, Kec. Sumbersari,
+                    Kabupaten Jember, Jawa Timur 68124
+                </li>
+
+                <li>
+                    <strong>Waktu Operasi:</strong>
+                    Buka 08.00 - 02.00
+                </li>
+
+                <li>
+                    <strong>Telefon:</strong>
+                    085151947909
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+
+    <div class="footer-brand">
+        <h2>BRISE.</h2>
+    </div>
+
+    <div class="footer-column">
+        <h4>Menu</h4>
+        <nav>
+            <ul>
+                <li><a href="menu.html#bakery">Pastry & Bakery</a></li>
+                <li><a href="menu.html#drinks">Drinks</a></li>
+                <li><a href="menu.html#foods">Foods</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="footer-column">
+        <h4>Info Brise</h4>
+        <nav>
+            <ul>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="promo.html">Promo</a></li>
+                <li>
+                    <button type="button" popovertarget="layanan-popup">
+                        Layanan
+                    </button>
+                </li>
+                <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="footer-column">
+        <h4>Contact Us</h4>
+        <nav>
+            <ul>
+                <li><a href="mailto:email@gmail.com">email@gmail.com</a></li>
+                <li><a href="..">Instagram</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</footer>
+
+<section id="layanan-popup" popover>
+
+    <button type="button"
+            popovertarget="layanan-popup"
+            popovertargetaction="hide">
+        Back
+    </button>
+
+    <h2>LAYANAN RESERVASI</h2>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+
+        <p>
+            <label for="nama">Nama</label><br>
+            <input type="text"
+                   id="nama"
+                   name="nama"
+                   placeholder="Masukkan nama lengkap"
+                   required>
+        </p>
+
+        <p>
+            <label for="bukti-pembayaran">Bukti Pembayaran</label><br>
+            <input type="file"
+                   id="bukti-pembayaran"
+                   name="bukti-pembayaran"
+                   accept="image/*,.pdf"
+                   required>
+        </p>
+
+        <p>
+            <label for="telepon">No-telp</label><br>
+            <input type="tel"
+                   id="telepon"
+                   name="telepon"
+                   placeholder="Masukkan nomor telepon"
+                   required>
+        </p>
+
+        <p>
+            <label for="rencana-reservasi">Rencana Reservasi</label><br>
+            <select id="rencana-reservasi"
+                    name="rencana-reservasi"
+                    required>
+                <option value="" selected disabled>
+                    Pilih rencana reservasi
+                </option>
+                <option value="meja">Reservasi meja</option>
+                <option value="acara">Reservasi acara</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="tempat-reservasi">Tempat Reservasi</label><br>
+            <select id="tempat-reservasi"
+                    name="tempat-reservasi"
+                    required>
+                <option value="" selected disabled>
+                    Pilih tempat reservasi
+                </option>
+                <option value="indoor">Area indoor</option>
+                <option value="outdoor">Area outdoor</option>
+                <option value="meeting">Ruang Meeting</option>
+            </select>
+        </p>
+
+        <button type="submit">Kirim</button>
+
+    </form>
+
+</section>
+
+</body>
 </html>
