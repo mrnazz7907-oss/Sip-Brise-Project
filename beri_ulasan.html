@@ -10,9 +10,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Aoboshi+One&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header> <!--Header untuk menampilkan logo, navigasi, dan kolom pencarian-->
-            <!--Logo-->
-            <h2>BRISE.</h2> 
+        <header class="site-header">
+            <h2>BRISE.</h2>
             <!--Navigasi dengan menggunakan tag link href dan unordered list-->
             <nav>
                 <ul>
@@ -20,15 +19,15 @@
                     <li><a href="home.html">Home</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="promo.html">Promo</a></li>
-                     <!-- Tombol ini membuka elemen yang memiliki id="layanan-popup". -->
                     <li><button type="button" popovertarget="layanan-popup">Layanan</button></li>
                     <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
                 </ul>
             </nav>
-            <!--Kolom Pencarian dan menggunakan placeholder-->
-            <div>
+            <div class="header-search">
                 <input type="text" placeholder="Cari..." />
-                <button type="submit">Cari</button>
+                <button type="button" aria-label="Cari">
+                    <img src="images/tombol.search.png" alt="" width="25" height="25">
+                </button>
             </div>
         </header>
         <hr> <!--Garis pembatas-->
@@ -118,35 +117,35 @@ gi
 
 </section>
 
-             <footer>
+        <footer class="site-footer">
             <h2>BRISE.</h2>
             <h4>Menu</h4>
-            <nav> <!--Navigasi untuk menu-->
+            <nav>
                 <ul>
-                    <li><a href="..">Pastry & Bakery</a></li>
-                    <li><a href="..">Drinks</a></li>
-                    <li><a href="..">Foods</a></li>
+                    <li><a href="menu.html">Pastry &amp; Bakery</a></li>
+                    <li><a href="menu.html">Drinks</a></li>
+                    <li><a href="menu.html">Foods</a></li>
                 </ul>
             </nav>
             <h4>Info Brise</h4>
-            <nav> <!--Navigasi untuk info Brise-->
+            <nav>
                 <ul>
                     <li><a href="profile.html">Profile</a></li>
                     <li><a href="home.html">Home</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="promo.html">Promo</a></li>
-                    <!-- Tombol Layanan di footer membuka pop-up yang sama. -->
                     <li><button type="button" popovertarget="layanan-popup">Layanan</button></li>
                     <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
                 </ul>
             </nav>
             <h4>Contact Us</h4>
-            <nav> <!--Navigasi untuk kontak-->
+            <nav>
                 <ul>
-                    <li><a href="..">email@gmail.com</a></li>
-                     <li><a href="..">Instagram</a></li>
-                </ul> 
+                    <li><a href="mailto:email@gmail.com">email@gmail.com</a></li>
+                    <li><a href="..">Instagram</a></li>
+                </ul>
             </nav>
+            <img src="images/footer_logo.jpeg" alt="Logo Cafe Brise" class="footer-logo">
         </footer>
 
         <!-- Elemen ini menjadi pop-up karena memiliki atribut popover. -->

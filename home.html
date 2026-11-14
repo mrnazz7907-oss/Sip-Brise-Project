@@ -499,7 +499,7 @@ footer {
 
 <body>
 
-<header>
+<header class="site-header">
     <h2>BRISE.</h2>
 
     <nav>
@@ -517,9 +517,11 @@ footer {
         </ul>
     </nav>
 
-    <div>
+    <div class="header-search">
         <input type="text" placeholder="Cari...">
-        <button type="submit">Cari</button>
+        <button type="button" aria-label="Cari">
+            <img src="images/tombol.search.png" alt="" width="25" height="25">
+        </button>
     </div>
 </header>
 
@@ -657,51 +659,35 @@ footer {
 
 </main>
 
-<footer>
-
-    <div class="footer-brand">
-        <h2>BRISE.</h2>
-    </div>
-
-    <div class="footer-column">
-        <h4>Menu</h4>
-        <nav>
-            <ul>
-                <li><a href="menu.html#bakery">Pastry & Bakery</a></li>
-                <li><a href="menu.html#drinks">Drinks</a></li>
-                <li><a href="menu.html#foods">Foods</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="footer-column">
-        <h4>Info Brise</h4>
-        <nav>
-            <ul>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="promo.html">Promo</a></li>
-                <li>
-                    <button type="button" popovertarget="layanan-popup">
-                        Layanan
-                    </button>
-                </li>
-                <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="footer-column">
-        <h4>Contact Us</h4>
-        <nav>
-            <ul>
-                <li><a href="mailto:email@gmail.com">email@gmail.com</a></li>
-                <li><a href="..">Instagram</a></li>
-            </ul>
-        </nav>
-    </div>
-
+<footer class="site-footer">
+    <h2>BRISE.</h2>
+    <h4>Menu</h4>
+    <nav>
+        <ul>
+            <li><a href="menu.html">Pastry &amp; Bakery</a></li>
+            <li><a href="menu.html">Drinks</a></li>
+            <li><a href="menu.html">Foods</a></li>
+        </ul>
+    </nav>
+    <h4>Info Brise</h4>
+    <nav>
+        <ul>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="promo.html">Promo</a></li>
+            <li><button type="button" popovertarget="layanan-popup">Layanan</button></li>
+            <li><a href="beri_ulasan.html">Beri ulasan &amp; rating</a></li>
+        </ul>
+    </nav>
+    <h4>Contact Us</h4>
+    <nav>
+        <ul>
+            <li><a href="mailto:email@gmail.com">email@gmail.com</a></li>
+            <li><a href="..">Instagram</a></li>
+        </ul>
+    </nav>
+    <img src="images/footer_logo.jpeg" alt="Logo Cafe Brise" class="footer-logo">
 </footer>
 
 <section id="layanan-popup" popover>

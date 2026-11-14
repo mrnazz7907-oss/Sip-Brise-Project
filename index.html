@@ -9,102 +9,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Aoboshi+One&display=swap" rel="stylesheet">
         <title>Welcome Good Brise</title>
         <style>
-            body {
-                background-color: #FDE9E8;
-                margin: 0;
-                padding: 0;
-                scroll-behavior: smooth;
-            }
-            header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px 10px;
-                position: relative;
-                top: 0;
-                left: 0;
-                width: 100%;
-                background-color: #fff;
-                border-bottom: 2px solid #000000;
-                box-sizing: border-box;
-            }
-            nav ul{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
-                padding: 20px;
-                margin: 0; 
-                list-style: none;
-            }
-            nav ul li a {
-                text-decoration: none;
-                color: #9E2C2C;
-                font-weight: bold;
-                padding: 5px 20px;
-                transition: background-color 0.3s, color 0.3s;
-                font-family: Anek tamil, sans-serif;
-                font-size: 15px;
-            }
-             nav ul li button {
-                text-decoration: none;
-                color: #9E2C2C;
-                font-weight: bold;
-                padding: 5px 20px;
-                border: none;
-                background-color: transparent;
-                transition: background-color 0.3s, color 0.3s;
-                font-family: Anek tamil, sans-serif;
-                font-size: 15px;
-                cursor: pointer;
-            }
-            nav ul li a:hover, 
-            nav ul li button:hover {
-            color: #471212; 
-            text-decoration: underline;
-            }
-            .hero-section {
-                text-align: center;
-                display: flex;
-                flex-direction: column; /* Menyusun tulisan ke bawah */
-                align-items: center;    /* Membuat semua elemen rata tengah */
-                gap: 10px;
-            }
-            header input {
-                border: none;
-                background: transparent;
-                outline: none;             /* Menghilangkan garis bingkai biru saat diklik */
-                width: 100%;
-                font-size: 16px;
-                color: #9E2C2C;
-                font-family: 'Anek Tamil', sans-serif;
-            }
-            header input::placeholder {
-                color: #9E2C2C;
-                opacity: 0.8;
-            }
-            header div button {
-                background-color: #9E2C2C;
-                border: none;
-                color: #fff;
-                font-size: 16px;
-                font-weight: bold;
-                cursor: pointer;
-                padding: 4px 8px;
-                border-radius: 15px;
-            }
-            header > div {
-                display: flex;
-                align-items: center;
-                background-color: #E8E8E8; /* Warna abu-abu lembut seperti di Figma */
-                border-radius: 25px;
-                padding: 6px 16px;
-                width: 240px;              /* Lebar ideal agar seimbang dengan menu */
-                justify-content: space-between;
-            }
-            header div button:hover {
-                color: #471212;
-            }
             .title-coffe {
                 font-family: 'Aoboshi One', serif;
                 font-size: 56px;
@@ -141,9 +45,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header style="display: flex;"> <!--Header untuk menampilkan logo, navigasi, dan kolom pencarian-->
+        <header class="site-header">
             <!--Logo-->
-            <h2 style="color: #9E2C2C; font-size: 35px;">BRISE.</h2>
+            <h2>BRISE.</h2>
             <!--Navigasi dengan menggunakan tag link href dan unordered list-->
             <nav>
                 <ul>
@@ -157,9 +61,11 @@
                 </ul>
             </nav>
             <!--Kolom Pencarian dan menggunakan placeholder-->
-            <div>
+            <div class="header-search">
                 <input type="text" placeholder="Cari..." />
-                <button type="submit">Cari</button>
+                <button type="button" aria-label="Cari">
+                <img src="images/tombol.search.png" alt="" width="25" height="25">
+                </button>
             </div>
         </header>
        
@@ -174,7 +80,7 @@
         </section>
         </main>
         <hr> <!--Garis pembatas-->
-        <footer> <!--Footer untuk menampilkan informasi kontak dan navigasi tambahan-->
+        <footer class="site-footer">
             <h2>BRISE.</h2>
             <h4>Menu</h4>
             <nav> <!--Navigasi untuk menu-->
@@ -203,6 +109,7 @@
                      <li><a href="..">Instagram</a></li>
                 </ul> 
             </nav>
+            <img src="images/footer_logo.jpeg" alt="Logo Cafe Brise" class="footer-logo">
         </footer>
 
          <!-- Elemen ini menjadi pop-up karena memiliki atribut popover. -->

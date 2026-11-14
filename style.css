@@ -1,10 +1,9 @@
-head
 /* =====================================
    1. PENGATURAN DASAR WEBSITE
 ===================================== */
 
 :root {
-    --maroon: #8e3038;
+    --maroon: #9E2C2C;
     --pink-bg: #f8e9e6;
     --cream: #fffaf6;
     --card: #dedede;
@@ -33,69 +32,105 @@ body {
 /* =====================================
    2. HEADER DAN NAVIGASI
 ===================================== */
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-
-    padding: 14px 4%;
-    background: white;
-
-    border-bottom: 1px solid #dddddd;
-
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-header h2 {
-    color: var(--maroon);
-    font-family: Georgia, serif;
-    font-size: 30px;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-header nav {
-    flex: 1;
-}
-
-header nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-
-    list-style: none;
-}
-
-header nav li {
-    display: flex;
-    align-items: center;
-}
-
-header nav a,
-header nav button {
-    color: #925258;
-    background: none;
-    border: none;
-
-    text-decoration: none;
-    font-size: 13px;
-
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-header nav a:hover,
-header nav button:hover {
-    color: var(--maroon);
-    transform: translateY(-2px);
-}
-
-
+  body {
+                background-color: #FDE9E8;
+                margin: 0;
+                padding: 0;
+                scroll-behavior: smooth;
+            }
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 10px;
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                border-bottom: 2px solid #000000;
+                box-sizing: border-box;
+            }
+            header > h2 {
+                font-family: Georgia, serif;
+            }
+            nav ul{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+                margin: 0; 
+                list-style: none;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: #9E2C2C;
+                font-weight: bold;
+                padding: 5px 20px;
+                transition: background-color 0.3s, color 0.3s;
+                font-family: Anek tamil, sans-serif;
+                font-size: 15px;
+            }
+             nav ul li button {
+                text-decoration: none;
+                color: #9E2C2C;
+                font-weight: bold;
+                padding: 5px 20px;
+                border: none;
+                background-color: transparent;
+                transition: background-color 0.3s, color 0.3s;
+                font-family: Anek tamil, sans-serif;
+                font-size: 15px;
+                cursor: pointer;
+            }
+            nav ul li a:hover, 
+            nav ul li button:hover {
+            color: #471212; 
+            text-decoration: underline;
+            }
+            .hero-section {
+                text-align: center;
+                display: flex;
+                flex-direction: column; /* Menyusun tulisan ke bawah */
+                align-items: center;    /* Membuat semua elemen rata tengah */
+                gap: 10px;
+            }
+            header input {
+                border: none;
+                background: transparent;
+                outline: none;             /* Menghilangkan garis bingkai biru saat diklik */
+                width: 100%;
+                font-size: 16px;
+                color: #9E2C2C;
+                font-family: 'Anek Tamil', sans-serif;
+            }
+            header input::placeholder {
+                color: #9E2C2C;
+                opacity: 0.8;
+            }
+            header div button {
+                background: none;
+                border: none;
+                color: #fff;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                padding: 4px 8px;
+                border-radius: 15px;
+            }
+            header > div {
+                display: flex;
+                align-items: center;
+                background-color: #E8E8E8; /* Warna abu-abu lembut seperti di Figma */
+                border-radius: 25px;
+                padding: 5px 16px;
+                width: 240px;              /* Lebar ideal agar seimbang dengan menu */
+                justify-content: space-between;
+            }
+            header div button:hover {
+                color: #471212;
+            }
 /* =====================================
    3. KOLOM PENCARIAN
 ===================================== */
@@ -352,187 +387,81 @@ body > main {
 
 footer {
     display: grid;
-
-    grid-template-columns: 1.3fr 1fr 1.2fr 1.3fr;
-
+    /* Menjadi 5 kolom: BRISE | Menu | Info Brise | Contact Us | Logo Cangkir */
+    grid-template-columns: 1.3fr 1fr 1.2fr 1.3fr 1fr;
     grid-template-rows: auto auto;
-
-    gap: 12px 20px;
-
-    padding: 28px 4%;
-
+    gap: 8px 20px;
+    padding: 35px 5%;
     background: white;
-
-    border-top: 2px solid #dddddd;
+    border-top: 2px solid #9E2C2C; /* Garis pembatas merah marun sesuai desain */
 }
 
-/* Logo BRISE */
-
+/* Kolom 1: Logo Teks BRISE. */
 footer > h2 {
     grid-column: 1;
     grid-row: 1 / 3;
-
     align-self: center;
-
-    font-size: 36px;
+    margin: 0;
+    font-size: 42px;
     font-family: Georgia, serif;
-
     color: var(--maroon);
 }
 
-/* Judul footer */
-
-footer > h4:nth-of-type(1) {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-footer > h4:nth-of-type(2) {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-footer > h4:nth-of-type(3) {
-    grid-column: 4;
-    grid-row: 1;
-}
+/* Baris 1: Judul Kolom */
+footer > h4:nth-of-type(1) { grid-column: 2; grid-row: 1; }
+footer > h4:nth-of-type(2) { grid-column: 3; grid-row: 1; }
+footer > h4:nth-of-type(3) { grid-column: 4; grid-row: 1; }
 
 footer h4 {
     color: var(--maroon);
-    margin-bottom: 5px;
+    margin: 0 0 8px 0;
+    font-size: 18px;
 }
 
-/* Navigasi footer */
+/* Baris 2: Isi Navigasi */
+footer > nav:nth-of-type(1) { grid-column: 2; grid-row: 2; }
+footer > nav:nth-of-type(2) { grid-column: 3; grid-row: 2; }
+footer > nav:nth-of-type(3) { grid-column: 4; grid-row: 2; }
 
-footer > nav:nth-of-type(1) {
-    grid-column: 2;
-    grid-row: 2;
+/* Kolom 5: Logo Gambar Cangkir di kanan */
+footer > .footer-logo {
+    grid-column: 5;
+    grid-row: 1 / 3;
+    align-self: center;
+    justify-self: end; /* Menempel rapi ke sisi kanan */
+    width: 95px;
+    height: auto;
 }
 
-footer > nav:nth-of-type(2) {
-    grid-column: 3;
-    grid-row: 2;
-}
-
-footer > nav:nth-of-type(3) {
-    grid-column: 4;
-    grid-row: 2;
-}
-
+/* Memastikan daftar menu footer lurus ke bawah (menimpa flex dari header) */
 footer nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 6px;
 }
 
 footer nav a,
 footer nav button {
     display: block;
-
     color: #925258;
     text-decoration: none;
-
-    font-size: 13px;
-
-    margin-bottom: 6px;
-
+    font-size: 14px;
+    padding: 0;          /* Menghilangkan padding bawaan tombol Layanan */
+    text-align: left;    /* Memastikan teks tombol rata kiri sejajar dengan link */
     background: none;
     border: none;
-
     cursor: pointer;
+    font-family: inherit;
 }
 
 footer nav a:hover,
 footer nav button:hover {
     color: var(--maroon);
-}
-
-
-/* =====================================
-   13. POP-UP LAYANAN RESERVASI
-===================================== */
-
-#layanan-popup {
-    width: min(440px, calc(100% - 28px));
-
-    margin: auto;
-    padding: 24px;
-
-    border: none;
-    border-radius: 16px;
-
-    background: var(--cream);
-    color: var(--text);
-
-    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-}
-
-#layanan-popup::backdrop {
-    background: rgba(34, 20, 20, 0.45);
-    backdrop-filter: blur(3px);
-}
-
-#layanan-popup > button {
-    display: block;
-    margin-left: auto;
-
-    border: none;
-    border-radius: 20px;
-
-    padding: 8px 15px;
-
-    background: var(--maroon);
-    color: white;
-
-    cursor: pointer;
-}
-
-#layanan-popup h2 {
-    color: var(--maroon);
-    font-size: 22px;
-
-    margin: 15px 0 20px;
-}
-
-#layanan-popup form p {
-    margin-bottom: 15px;
-}
-
-#layanan-popup label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 6px;
-}
-
-#layanan-popup input,
-#layanan-popup select {
-    width: 100%;
-
-    padding: 10px;
-
-    border: 1px solid #d6bfc0;
-    border-radius: 8px;
-
-    background: white;
-
-    font: inherit;
-}
-
-#layanan-popup form button[type="submit"] {
-    width: 100%;
-
-    padding: 11px;
-
-    background: var(--maroon);
-    color: white;
-
-    border: none;
-    border-radius: 8px;
-
-    cursor: pointer;
-}
-
-#layanan-popup form button[type="submit"]:hover,
-#layanan-popup > button:hover {
-    background: #b34c57;
+    text-decoration: underline;
 }
 
 
@@ -562,193 +491,6 @@ footer nav button:hover {
     display: none !important;
 }
 
-
-/* =====================================
-   15. RESPONSIVE TABLET DAN HP
-===================================== */
-
-@media (max-width: 850px) {
-
-    header {
-        gap: 10px;
-        padding: 12px 3%;
-    }
-
-    header nav ul {
-        gap: 9px;
-    }
-
-    header nav a,
-    header nav button {
-        font-size: 11px;
-    }
-
-    .container {
-        grid-template-columns: 23% minmax(0, 1fr);
-        gap: 9px;
-    }
-
-    .sidebar {
-        padding: 12px;
-    }
-
-    .content {
-        padding: 12px;
-    }
-
-    .product-grid {
-        gap: 9px;
-    }
-
-    .product-card img {
-        height: 110px;
-    }
-}
-
-
-/* =====================================
-   16. RESPONSIVE LAYAR KECIL
-===================================== */
-
-@media (max-width: 600px) {
-
-    header {
-        gap: 7px;
-        padding: 10px 3%;
-    }
-
-    header h2 {
-        font-size: 20px;
-    }
-
-    header nav ul {
-        gap: 5px;
-    }
-
-    header nav a,
-    header nav button {
-        font-size: 9px;
-    }
-
-    .search-box input {
-        width: 75px;
-        padding: 7px;
-        font-size: 10px;
-    }
-
-    .search-box button {
-        display: none;
-    }
-
-    .container {
-        grid-template-columns: 24% minmax(0, 1fr);
-        gap: 8px;
-    }
-
-    .sidebar {
-        padding: 10px 8px;
-        min-height: 70vh;
-        top: 65px;
-    }
-
-    .menu-group h4 {
-        font-size: 12px;
-    }
-
-    .menu-group a {
-        font-size: 11px;
-        margin-left: 5px;
-    }
-
-    .menu-group {
-        margin-bottom: 17px;
-    }
-
-    .content {
-        padding: 10px;
-    }
-
-    .content > h3 {
-        font-size: 15px;
-    }
-
-    .category h4 {
-        font-size: 13px;
-    }
-
-    .product-grid {
-        gap: 7px;
-    }
-
-    .product-card {
-        border-radius: 9px;
-    }
-
-    .product-card img {
-        height: 80px;
-        width: calc(100% - 8px);
-        margin-top: 4px;
-        border-radius: 7px;
-    }
-
-    .product-info {
-        padding: 5px 6px 7px;
-    }
-
-    .product-info h5 {
-        font-size: 11px;
-    }
-
-    .product-info p {
-        font-size: 10px;
-    }
-
-    footer {
-        padding: 15px 3%;
-        gap: 8px;
-
-        grid-template-columns: 1.2fr 1fr 1.2fr 1.2fr;
-    }
-
-    footer > h2 {
-        font-size: 19px;
-    }
-
-    footer h4 {
-        font-size: 11px;
-    }
-
-    footer nav a,
-    footer nav button {
-        font-size: 9px;
-        margin-bottom: 5px;
-    }
-}
-
-
-/* =====================================
-   17. RESPONSIVE HP SANGAT KECIL
-===================================== */
-
-@media (max-width: 380px) {
-
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    header nav ul {
-        gap: 4px;
-    }
-
-    header nav a,
-    header nav button {
-        font-size: 8px;
-    }
-
-    .search-box input {
-        width: 60px;
-    }
-}
     #layanan-popup {
     box-sizing: border-box;
     width: 90%;
@@ -793,3 +535,242 @@ footer nav button:hover {
     border: none;
     border-radius: 8px;
     }
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 10px 2%;
+    background: #fff;
+    border-bottom: 2px solid #000;
+}
+
+.site-header > h2 {
+    flex-shrink: 0;
+    color: var(--maroon);
+    font-family: Georgia, serif;
+    font-size: 35px;
+}
+
+.site-header nav {
+    flex: 1;
+    min-width: 0;
+}
+
+.site-header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 0;
+    list-style: none;
+}
+
+.site-header nav a,
+.site-header nav button {
+    display: block;
+    padding: 8px 10px;
+    color: var(--maroon);
+    background: transparent;
+    border: 0;
+    font-family: "Anek Tamil", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.site-header nav a:hover,
+.site-header nav button:hover {
+    color: #471212;
+    text-decoration: underline;
+}
+
+.site-header .header-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 240px;
+    gap: 8px;
+    padding: 5px 12px;
+    background: #e8e8e8;
+    border-radius: 25px;
+}
+
+.site-header .header-search input {
+    width: 100%;
+    min-width: 0;
+    padding: 4px;
+    color: var(--maroon);
+    background: transparent;
+    border: 0;
+    outline: none;
+    font: 16px Arial, sans-serif;
+}
+
+.site-header .header-search input::placeholder {
+    color: var(--maroon);
+    opacity: 0.8;
+}
+
+.site-header .header-search button {
+    flex: 0 0 auto;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.site-header .header-search img {
+    display: block;
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.site-footer {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1.2fr 1.3fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px 20px;
+    padding: 35px 5%;
+    background: #fff;
+    border-top: 2px solid var(--maroon);
+}
+
+.site-footer > h2 {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self: center;
+    margin: 0;
+    color: var(--maroon);
+    font-family: Georgia, serif;
+    font-size: 42px;
+}
+
+.site-footer > h4:nth-of-type(1) { grid-column: 2; grid-row: 1; }
+.site-footer > h4:nth-of-type(2) { grid-column: 3; grid-row: 1; }
+.site-footer > h4:nth-of-type(3) { grid-column: 4; grid-row: 1; }
+
+.site-footer > h4 {
+    margin: 0 0 8px;
+    color: var(--maroon);
+    font-size: 18px;
+}
+
+.site-footer > nav:nth-of-type(1) { grid-column: 2; grid-row: 2; }
+.site-footer > nav:nth-of-type(2) { grid-column: 3; grid-row: 2; }
+.site-footer > nav:nth-of-type(3) { grid-column: 4; grid-row: 2; }
+
+.site-footer > .footer-logo {
+    grid-column: 5;
+    grid-row: 1 / 3;
+    align-self: center;
+    justify-self: end;
+    width: 95px;
+    height: auto;
+}
+
+.site-footer nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-footer nav a,
+.site-footer nav button {
+    display: block;
+    padding: 0;
+    color: #925258;
+    background: transparent;
+    border: 0;
+    font-family: inherit;
+    font-size: 14px;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.site-footer nav a:hover,
+.site-footer nav button:hover {
+    color: var(--maroon);
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .site-header {
+        flex-wrap: wrap;
+    }
+
+    .site-header nav {
+        order: 3;
+        flex: 1 0 100%;
+    }
+
+    .site-header nav ul {
+        flex-wrap: wrap;
+    }
+
+    .site-header .header-search {
+        flex-basis: 210px;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        gap: 6px;
+        padding: 8px 3%;
+    }
+
+    .site-header > h2 {
+        font-size: 25px;
+    }
+
+    .site-header .header-search {
+        flex-basis: 160px;
+    }
+
+    .site-header nav ul {
+        gap: 0;
+    }
+
+    .site-header nav a,
+    .site-header nav button {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .site-footer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 20px 4%;
+    }
+
+    .site-footer > h2 {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        align-self: start;
+        font-size: 28px;
+    }
+
+    .site-footer > h4:nth-of-type(1) { grid-column: 2; grid-row: 1; }
+    .site-footer > nav:nth-of-type(1) { grid-column: 2; grid-row: 2; }
+    .site-footer > h4:nth-of-type(2) { grid-column: 1; grid-row: 3; }
+    .site-footer > nav:nth-of-type(2) { grid-column: 1; grid-row: 4; }
+    .site-footer > h4:nth-of-type(3) { grid-column: 2; grid-row: 3; }
+    .site-footer > nav:nth-of-type(3) { grid-column: 2; grid-row: 4; }
+
+    .site-footer > .footer-logo {
+        grid-column: 1;
+        grid-row: 5;
+        justify-self: start;
+        width: 70px;
+    }
+}
