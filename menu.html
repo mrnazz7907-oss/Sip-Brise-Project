@@ -8,7 +8,275 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Aoboshi+One&display=swap" rel="stylesheet">
+
     </head>
+      <!-- CSS KHUSUS ISI MENU -->
+    <style>
+
+        /* 1. CONTAINER MENU */
+        .container {
+            max-width: 1400px;
+            margin: 12px auto;
+            padding: 12px;
+
+            display: grid;
+            grid-template-columns: 22% 1fr;
+            gap: 14px;
+            align-items: start;
+
+            background: #f8e9e6;
+        }
+
+        /* 2. SIDEBAR KIRI */
+        .sidebar {
+            background: #fffaf6;
+            border-radius: 12px;
+            padding: 18px;
+            min-height: 70vh;
+
+            position: sticky;
+            top: 15px;
+        }
+
+        .menu-group {
+            margin-bottom: 22px;
+        }
+
+        .menu-group h4 {
+            font-size: 17px;
+            margin-bottom: 8px;
+            color: #302323;
+        }
+
+        .menu-group a {
+            display: block;
+            color: #302323;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 7px 0 7px 10px;
+
+            transition: all 0.3s ease;
+        }
+
+        /* Efek hover sidebar */
+        .menu-group a:hover {
+            color: #963b43;
+            transform: translateX(5px);
+        }
+
+        /* Kategori aktif */
+        .menu-group a.active {
+            color: #963b43;
+            font-weight: bold;
+            transform: translateX(5px);
+        }
+
+
+        /* 3. KONTEN KANAN */
+        .content {
+            background: #fffaf6;
+            border-radius: 12px;
+            padding: 18px;
+            min-width: 0;
+        }
+
+        .content > h3 {
+            font-size: 21px;
+            color: #302323;
+            margin-bottom: 10px;
+        }
+
+        .category {
+            margin-bottom: 25px;
+            scroll-margin-top: 15px;
+        }
+
+        .category h4 {
+            font-size: 17px;
+            font-weight: 500;
+            margin: 10px 0;
+        }
+
+
+        /* 4. GRID PRODUK */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+
+        /* 5. KARTU PRODUK */
+        .product-card {
+            background: #dedede;
+            border-radius: 11px;
+            overflow: hidden;
+            min-width: 0;
+            cursor: pointer;
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        /* Hover kartu */
+        .product-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 10px 20px rgba(100, 40, 40, 0.18);
+        }
+
+
+        /* 6. FOTO PRODUK */
+        .product-card img {
+            display: block;
+            width: calc(100% - 12px);
+            height: 135px;
+
+            object-fit: cover;
+
+            margin: 6px auto;
+            border-radius: 9px;
+
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.04);
+        }
+
+
+        /* 7. INFORMASI PRODUK */
+        .product-info {
+            border-top: 2px solid #999;
+            padding: 8px 10px 10px;
+        }
+
+        .product-info h5 {
+            font-family: Georgia, serif;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .product-info p {
+            color: #963b43;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+
+        /* 8. ANIMASI KATEGORI */
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .category {
+            animation: muncul 0.7s ease;
+        }
+
+
+        /* 9. RESPONSIVE TABLET */
+        @media (max-width: 850px) {
+
+            .container {
+                grid-template-columns: 23% 1fr;
+                gap: 9px;
+            }
+
+            .sidebar {
+                padding: 12px;
+            }
+
+            .content {
+                padding: 12px;
+            }
+
+            .product-grid {
+                gap: 8px;
+            }
+
+            .product-card img {
+                height: 105px;
+            }
+        }
+
+
+        /* 10. RESPONSIVE HP */
+        @media (max-width: 600px) {
+
+            .container {
+                grid-template-columns: 24% 1fr;
+                gap: 7px;
+                padding: 7px;
+            }
+
+            .sidebar {
+                padding: 9px 6px;
+            }
+
+            .menu-group h4 {
+                font-size: 12px;
+            }
+
+            .menu-group a {
+                font-size: 10px;
+                margin-left: 4px;
+            }
+
+            .content {
+                padding: 9px;
+            }
+
+            .content > h3 {
+                font-size: 15px;
+            }
+
+            .category h4 {
+                font-size: 13px;
+            }
+
+            .product-grid {
+                gap: 6px;
+            }
+
+            .product-card img {
+                height: 80px;
+                width: calc(100% - 8px);
+            }
+
+            .product-info {
+                padding: 5px 6px 7px;
+            }
+
+            .product-info h5 {
+                font-size: 11px;
+            }
+
+            .product-info p {
+                font-size: 10px;
+            }
+        }
+
+
+        /* 11. HP LAYAR SANGAT KECIL */
+        @media (max-width: 360px) {
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+    </style>
     <body>
         <header> <!--Header untuk menampilkan logo, navigasi, dan kolom pencarian-->
             <!--Logo-->
@@ -314,14 +582,91 @@
         <!-- KATEGORI YANG BELUM ADA FOTONYA -->
         <section id="roll" class="category">
             <h4>Roll</h4>
+            
+            <div class="product-grid">
+
+                <div class="product-card">
+                    <img src="images/Roll-1.jpg" alt="Roll 1">
+                    <div class="product-info">
+                        <h5>Roll</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/Roll-2.jpg" alt="Roll 2">
+                    <div class="product-info">
+                        <h5>Roll</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/Roll-3.jpg" alt="Roll 3">
+                    <div class="product-info">
+                        <h5>Roll</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
         </section>
 
         <section id="rice-bowl" class="category">
             <h4>Rice Bowl</h4>
+
+                 <div class="product-grid">
+
+                <div class="product-card">
+                    <img src="images/Rice-Bowl-1.jpg" alt="Rice Bowl 1">
+                    <div class="product-info">
+                        <h5>Rice Bowl</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/Rice-Bowl-2.jpg" alt="Rice Bowl 2">
+                    <div class="product-info">
+                        <h5>Rice Bowl</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/Rice-Bowl-3.jpg" alt="Rice Bowl 3">
+                    <div class="product-info">
+                        <h5>Rice Bowl</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
         </section>
 
         <section id="iga-brise" class="category">
             <h4>Iga Brise</h4>
+            
+                 <div class="product-grid">
+
+                <div class="product-card">
+                    <img src="images/Iga-Brise-1.jpg" alt="Iga Brise 1">
+                    <div class="product-info">
+                        <h5>Iga Brise</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                         <div class="product-card">
+                    <img src="images/Iga-Brise-2.jpg" alt="Iga Brise 2">
+                    <div class="product-info">
+                        <h5>Iga Brise</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                         <div class="product-card">
+                    <img src="images/Iga-Brise-3.jpg" alt="Iga Brise 3">
+                    <div class="product-info">
+                        <h5>Iga Brise</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
         </section>
 
     </main>
@@ -435,5 +780,6 @@
                 <button type="submit">Kirim</button>
             </form>
         </section>
+        
     </body>
 </html>
