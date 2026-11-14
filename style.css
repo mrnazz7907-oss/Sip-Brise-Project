@@ -1,0 +1,45 @@
+
+    #layanan-popup {
+    box-sizing: border-box;
+    width: 90%;
+    max-width: 450px;
+    margin: auto;
+    padding: 30px;
+    color: #8f1010;
+    background: #fff8f5;
+    border: none;
+    border-radius: 15px;
+    }
+
+    #layanan-popup * {
+    box-sizing: border-box;
+    }
+
+    #layanan-popup::backdrop {
+    background: rgba(0,0,0,.6);
+    }
+
+    #layanan-popup h2 {
+    margin: 20px 0;
+    text-align: center;
+    }
+
+    #layanan-popup p {
+    margin-bottom: 15px;
+    }
+
+    #layanan-popup input, #layanan-popup select {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    }
+
+    #layanan-popup button {
+    padding: 10px 20px;
+    color: white;
+    background: #a30e0e;
+    border: none;
+    border-radius: 8px;
+    }
