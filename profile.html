@@ -5,6 +5,393 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--Menunjukan viewport untuk tampilan responsif-->
         <title>Profile Cafe Brise</title>
     </head>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8eeee;
+    color: #a30e0e;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 30px;
+    background: white;
+}
+
+header h2 {
+    color: #a71919;
+    font-size: 32px;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    list-style: none;
+}
+
+header nav a,
+header nav button {
+    color: #a71919;
+    font-size: 14px;
+    background: none;
+    border: none;
+}
+
+header input {
+    width: 205px;
+    padding: 5px 12px;
+    border: none;
+    border-radius: 20px;
+    background: #ddd;
+    font-size: 13px;
+}
+
+header div button {
+    padding: 5px 10px;
+    color: #a71919;
+    background: none;
+    border: none;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #999;
+    margin: 0 14px;
+}
+
+main {
+    padding: 25px 30px 10px;
+    background: #f4dcd8;
+}
+
+#profil-brise {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 0 15px 30px;
+}
+
+#profil-brise > div:first-child {
+    flex: 0 0 32%;
+}
+
+#profil-brise img {
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+    border: 2px solid #a30e0e;
+    border-radius: 15px;
+}
+
+#profil-brise > div:last-child {
+    flex: 1;
+    padding: 12px 22px;
+    background: rgba(255, 248, 245, 0.65);
+    border-radius: 15px;
+}
+
+#profil-brise h2 {
+    color: #a30e0e;
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: normal;
+}
+
+#profil-brise p {
+    color: #222;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+#profil-brise h3 {
+    margin-bottom: 8px;
+    color: #a30e0e;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: normal;
+}
+
+#konten-slider {
+    padding: 12px 17px 10px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#konten-slider h2 {
+    margin-bottom: 12px;
+    color: #a30e0e;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: normal;
+}
+
+.slider-container {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding-bottom: 0;
+}
+
+.slider-image {
+    flex: 0 0 240px;
+    width: 240px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1.3fr 1.2fr 1.2fr 1.8fr;
+    grid-template-rows: auto auto;
+    column-gap: 15px;
+    padding: 25px 28px 18px;
+    background: white;
+    border-top: 1px solid #999;
+}
+
+footer h2 {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self: center;
+    color: #a71919;
+    font-size: 48px;
+}
+
+footer h4 {
+    margin-bottom: 5px;
+    color: #a71919;
+    font-size: 20px;
+}
+
+footer h4:nth-of-type(1) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+footer nav:nth-of-type(1) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+footer h4:nth-of-type(2) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+footer nav:nth-of-type(2) {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+footer h4:nth-of-type(3) {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+footer nav:nth-of-type(3) {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+footer nav ul {
+    list-style: none;
+}
+
+footer nav li {
+    margin-bottom: 6px;
+}
+
+footer nav a,
+footer nav button {
+    color: #a71919;
+    font-size: 14px;
+    background: none;
+    border: none;
+}
+
+#layanan-popup {
+    width: 90%;
+    max-width: 450px;
+    margin: auto;
+    padding: 30px;
+    color: #8f1010;
+    background-color: #fff8f5;
+    border: none;
+    border-radius: 15px;
+}
+
+#layanan-popup::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#layanan-popup h2 {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#layanan-popup p {
+    margin-bottom: 15px;
+}
+
+#layanan-popup input,
+#layanan-popup select {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#layanan-popup button {
+    padding: 10px 20px;
+    color: white;
+    background: #a30e0e;
+    border: none;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 0;
+    }
+
+    header {
+        gap: 5px;
+        padding: 10px 5px;
+    }
+
+    header h2 {
+        font-size: 15px;
+    }
+
+    header nav ul {
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+
+    header nav a,
+    header nav button {
+        font-size: 6px;
+    }
+
+    header input {
+        width: 55px;
+        padding: 4px;
+        font-size: 7px;
+    }
+
+    header div button {
+        padding: 4px;
+        font-size: 7px;
+    }
+
+    main {
+        padding: 15px 5px 8px;
+    }
+
+    #profil-brise {
+        gap: 10px;
+        padding: 0 5px 15px;
+    }
+
+    #profil-brise > div:first-child {
+        flex: 0 0 38%;
+    }
+
+    #profil-brise img {
+        height: 145px;
+        border-radius: 9px;
+    }
+
+    #profil-brise > div:last-child {
+        padding: 8px;
+        border-radius: 9px;
+    }
+
+    #profil-brise h2 {
+        font-size: 17px;
+    }
+
+    #profil-brise p {
+        font-size: 9px;
+        line-height: 1.4;
+    }
+
+    #profil-brise h3 {
+        margin-bottom: 4px;
+        font-size: 12px;
+    }
+
+    #konten-slider {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    #konten-slider h2 {
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    .slider-container {
+        gap: 10px;
+        overflow-x: auto;
+    }
+
+    .slider-image {
+        flex: 0 0 120px;
+        width: 120px;
+        height: 65px;
+        border-radius: 9px;
+    }
+
+    footer {
+        grid-template-columns: 1.2fr 1.1fr 1.1fr 1.5fr;
+        column-gap: 5px;
+        padding: 15px 8px;
+    }
+
+    footer h2 {
+        font-size: 18px;
+    }
+
+    footer h4 {
+        margin-bottom: 4px;
+        font-size: 9px;
+    }
+
+    footer nav li {
+        margin-bottom: 4px;
+    }
+
+    footer nav a,
+    footer nav button {
+        font-size: 7px;
+    }
+}
+
+    </style>
     <body>
         <header> <!--Header untuk menampilkan logo, navigasi, dan kolom pencarian-->
             <!--Logo-->
