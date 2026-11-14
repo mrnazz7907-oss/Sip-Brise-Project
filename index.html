@@ -70,42 +70,73 @@
                 align-items: center;    /* Membuat semua elemen rata tengah */
                 gap: 10px;
             }
+            header input {
+                border: none;
+                background: transparent;
+                outline: none;             /* Menghilangkan garis bingkai biru saat diklik */
+                width: 100%;
+                font-size: 16px;
+                color: #9E2C2C;
+                font-family: 'Anek Tamil', sans-serif;
+            }
+            header input::placeholder {
+                color: #9E2C2C;
+                opacity: 0.8;
+            }
+            header div button {
+                background-color: #9E2C2C;
+                border: none;
+                color: #fff;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                padding: 4px 8px;
+                border-radius: 15px;
+            }
+            header > div {
+                display: flex;
+                align-items: center;
+                background-color: #E8E8E8; /* Warna abu-abu lembut seperti di Figma */
+                border-radius: 25px;
+                padding: 6px 16px;
+                width: 240px;              /* Lebar ideal agar seimbang dengan menu */
+                justify-content: space-between;
+            }
+            header div button:hover {
+                color: #471212;
+            }
             .title-coffe {
                 font-family: 'Aoboshi One', serif;
                 font-size: 56px;
                 font-weight: bold;
-    }
-    .title-mood {
-        font-family: 'Annie Use Your Telescope', cursive;
-        font-size: 64px;
-    }
-    .title-brise {
-        font-family: 'Birthstone', cursive;
-        font-size: 72px;
-        font-style: italic;
-    }
-    .get-started-btn {
-      background-color: #9E2C2C; /* Merah marun sesuai warna BRISE */
-        color: white;
-        border: none;
-        padding: 12px 35px;
-        border-radius: 30px; /* Mengubah tombol kotak jadi kapsul */
-        font-size: 20px;
-        font-family: 'Anek Tamil', sans-serif;
-        font-weight: bold;
-        cursor: pointer;
-        margin-top: 25px;
-        margin-bottom: 25px; /* Jarak ekstra dari teks di atasnya */
-        transition: background-color 0.3s, transform 0.2s;
-    }
-    .get-started-btn:hover {
-        background-color: #471212;
-        transform: scale(1.03); /* Efek membesar sedikit saat ditunjuk kursor */
-    }
-
-    
-
-
+            }
+            .title-mood {
+                font-family: 'Annie Use Your Telescope', cursive;
+                font-size: 64px;
+            }
+            .title-brise {
+                font-family: 'Birthstone', cursive;
+                font-size: 72px;
+                font-style: italic;
+            }
+            .get-started-btn {
+                background-color: #9E2C2C; /* Merah marun sesuai warna BRISE */
+                color: white;
+                border: none;
+                padding: 12px 35px;
+                border-radius: 30px; /* Mengubah tombol kotak jadi kapsul */
+                font-size: 20px;
+                font-family: 'Anek Tamil', sans-serif;
+                font-weight: bold;
+                cursor: pointer;
+                margin-top: 25px;
+                margin-bottom: 25px; /* Jarak ekstra dari teks di atasnya */
+                transition: background-color 0.3s, transform 0.2s;
+            }
+            .get-started-btn:hover {
+                background-color: #471212;
+                transform: scale(1.03); /* Efek membesar sedikit saat ditunjuk kursor */
+            }
         </style>
         <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
     </head>
