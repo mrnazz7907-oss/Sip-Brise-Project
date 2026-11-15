@@ -9,6 +9,101 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Aoboshi+One&display=swap" rel="stylesheet">
     </head>
+    <style>
+#promo-banner {
+    background-color: var(--cream);
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+#promo-banner h2 {
+    color: var(--maroon);
+    font-family: Georgia, serif;
+    font-size: 26px;
+    margin-bottom: 2px;
+}
+
+#promo-banner p {
+    color: #5c4b4b;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+#promo-banner p strong {
+    color: var(--maroon);
+    font-family: Georgia, serif;
+    font-size: 17px;
+}
+
+main > section:nth-of-type(2) {
+    padding: 0 8px;
+}
+
+main > section:nth-of-type(2) h3 {
+    color: #000;
+    font-size: 22px;
+    margin: 10px 0 18px;
+}
+
+.daftar-promo-terbaru {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 250px));
+    justify-content: space-evenly;
+    align-items: start;
+    gap: 18px 12px;
+    padding: 0 5px 25px;
+}
+
+.promo-trigger {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.promo-trigger:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(80, 30, 30, 0.18);
+}
+
+.promo-trigger:active {
+    transform: scale(0.97);
+}
+
+@media (max-width: 400px) {
+    .daftar-promo-terbaru {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    #promo-banner h2 {
+        font-size: 22px;
+    }
+
+    #promo-banner p {
+        font-size: 13px;
+    }
+
+    main > section:nth-of-type(2) h3 {
+        font-size: 19px;
+    }
+}
+    </style>
     <body>
         <header class="site-header">
             <h2>BRISE.</h2>
