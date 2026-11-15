@@ -20,18 +20,14 @@
                     url("images/kota.kanan.png");
                 background-repeat: no-repeat;
                background-position: 
-        left 20px top 110px,     /* Gedung kiri: mulai di bawah header */
-        right 50px top 130px,    /* Awan kanan */
-        right 20px top 430px;    /* Kota kanan bawah: geser angka 430px agar pas di atas footer */
-
-    /* 3. Atur ukuran masing-masing gambar */
-    background-size: 
-        130px auto,
-        240px auto,
-        280px auto;
-
-    /* 4. Trik otomatis menghilangkan kotak putih pada gambar agar menyatu dengan background pink */
-    background-blend-mode: multiply;            
+        left -10px top 10px,     /* Gedung kiri: mulai di bawah header */
+        right 50px top 90px,    /* Awan kanan */
+        right 5px top 455px;    /* Kota kanan bawah: geser angka 430px agar pas di atas footer */
+            background-size: 
+            130px auto,
+            240px auto,
+            280px auto;
+            background-blend-mode: multiply;            
             }
             .title-coffe {
                 font-family: 'Aoboshi One', serif;
@@ -41,12 +37,15 @@
             .title-mood {
                 font-family: 'Annie Use Your Telescope', cursive;
                 font-size: 64px;
+                font-weight: lighter;
+                margin-right: 225px;
             }
             .title-brise {
                 font-family: 'Birthstone', cursive;
                 font-size: 72px;
                 font-style: italic;
             }
+        
             .get-started-btn {
                 background-color: #9E2C2C; /* Merah marun sesuai warna BRISE */
                 color: white;
@@ -99,6 +98,7 @@
             <h1 class="title-coffe">Good Coffee</h1>
             <h1 class="title-mood">Good Mood</h1>
             <h1 class="title-brise">Good Brise</h1>
+            
             <a href="home.html" style="text-decoration: none;">
                 <button class="get-started-btn">Get Started</button>
             </a>
