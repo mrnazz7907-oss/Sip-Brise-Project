@@ -4,13 +4,30 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Layanan Reservasi | BRISE.</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header>
-            <a href="index.html">Kembali</a>
+        <header class="site-header">
+            <h2>BRISE.</h2>
+            <nav>
+                <ul>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="promo.html">Promo</a></li>
+                    <li><a href="#form-reservasi">Layanan</a></li>
+                    <li><a href="beri_ulasan.html">Beri ulasan &amp; rating</a></li>
+                </ul>
+            </nav>
+            <div class="header-search">
+                <input type="text" placeholder="Cari..." aria-label="Cari">
+                <button type="button" aria-label="Cari">
+                    <img src="images/tombol.search.png" alt="" width="25" height="25">
+                </button>
+            </div>
         </header>
 
-        <main>
+        <main id="form-reservasi">
             <h1>LAYANAN RESERVASI</h1>
 
             <form action="#" method="post" enctype="multipart/form-data">
@@ -71,5 +88,36 @@
                 <button type="submit">Kirim</button>
             </form>
         </main>
+
+        <footer class="site-footer">
+            <h2>BRISE.</h2>
+            <h4>Menu</h4>
+            <nav>
+                <ul>
+                    <li><a href="menu.html">Pastry &amp; Bakery</a></li>
+                    <li><a href="menu.html">Drinks</a></li>
+                    <li><a href="menu.html">Foods</a></li>
+                </ul>
+            </nav>
+            <h4>Info Brise</h4>
+            <nav>
+                <ul>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="promo.html">Promo</a></li>
+                    <li><a href="#form-reservasi">Layanan</a></li>
+                    <li><a href="beri_ulasan.html">Beri ulasan &amp; rating</a></li>
+                </ul>
+            </nav>
+            <h4>Contact Us</h4>
+            <nav>
+                <ul>
+                    <li><a href="mailto:email@gmail.com">email@gmail.com</a></li>
+                    <li><a href="..">Instagram</a></li>
+                </ul>
+            </nav>
+            <img src="images/footer_logo.jpeg" alt="Logo Cafe Brise" class="footer-logo">
+        </footer>
     </body>
 </html>

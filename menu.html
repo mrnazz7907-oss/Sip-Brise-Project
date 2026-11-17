@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="id"> <!--Menunjukan bahasanya adalah Bahasa Indonesia-->
+    <head>
+        <meta charset="UTF-8" /> <!--Mengizinkan browser membaca semua jenis karakter teks dan simbol-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--Menunjukan viewport untuk tampilan responsif-->
+        <title>Welcome Good Brise</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Aoboshi+One&display=swap" rel="stylesheet">
+
+    </head>
+      <!-- CSS KHUSUS ISI MENU -->
+    <style>
+
+        /* 1. CONTAINER MENU */
+        .container {
+            max-width: 1400px;
+            margin: 12px auto;
+            padding: 12px;
+
+            display: grid;
+            grid-template-columns: 22% 1fr;
+            gap: 14px;
+            align-items: start;
+
+            background: #f8e9e6;
+        }
+
+        /* 2. SIDEBAR KIRI */
+        .sidebar {
+            background: #fffaf6;
+            border-radius: 12px;
+            padding: 18px;
+            min-height: 70vh;
+
+            position: sticky;
+            top: 15px;
+        }
+
+        .menu-group {
+            margin-bottom: 22px;
+        }
+
+        .menu-group h4 {
+            font-size: 17px;
+            margin-bottom: 8px;
+            color: #302323;
+        }
+
+        .menu-group a {
+            display: block;
+            color: #302323;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 7px 0 7px 10px;
+
+            transition: all 0.3s ease;
+        }
+
+        /* Efek hover sidebar */
+        .menu-group a:hover {
+            color: #963b43;
+            transform: translateX(5px);
+        }
+
+        /* Kategori aktif */
+        .menu-group a.active {
+            color: #963b43;
+            font-weight: bold;
+            transform: translateX(5px);
+        }
+
+
+        /* 3. KONTEN KANAN */
+        .content {
+            background: #fffaf6;
+            border-radius: 12px;
+            padding: 18px;
+            min-width: 0;
+        }
+
+        .content > h3 {
+            font-size: 21px;
+            color: #302323;
+            margin-bottom: 10px;
+        }
+
+        .category {
+            margin-bottom: 25px;
+            scroll-margin-top: 15px;
+        }
+
+        .category h4 {
+            font-size: 17px;
+            font-weight: 500;
+            margin: 10px 0;
+        }
+
+
+        /* 4. GRID PRODUK */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+
+        /* 5. KARTU PRODUK */
+        .product-card {
+            background: #dedede;
+            border-radius: 11px;
+            overflow: hidden;
+            min-width: 0;
+            cursor: pointer;
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        /* Hover kartu */
+        .product-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 10px 20px rgba(100, 40, 40, 0.18);
+        }
+
+
+        /* 6. FOTO PRODUK */
+        .product-card img {
+            display: block;
+            width: calc(100% - 12px);
+            height: 135px;
+
+            object-fit: cover;
+
+            margin: 6px auto;
+            border-radius: 9px;
+
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.04);
+        }
+
+
+        /* 7. INFORMASI PRODUK */
+        .product-info {
+            border-top: 2px solid #999;
+            padding: 8px 10px 10px;
+        }
+
+        .product-info h5 {
+            font-family: Georgia, serif;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .product-info p {
+            color: #963b43;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+
+        /* 8. ANIMASI KATEGORI */
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .category {
+            animation: muncul 0.7s ease;
+        }
+
+
+        /* 9. RESPONSIVE TABLET */
+        @media (max-width: 850px) {
+
+            .container {
+                grid-template-columns: 23% 1fr;
+                gap: 9px;
+            }
+
+            .sidebar {
+                padding: 12px;
+            }
+
+            .content {
+                padding: 12px;
+            }
+
+            .product-grid {
+                gap: 8px;
+            }
+
+            .product-card img {
+                height: 105px;
+            }
+        }
+
+
+        /* 10. RESPONSIVE HP */
+        @media (max-width: 600px) {
+
+            .container {
+                grid-template-columns: 24% 1fr;
+                gap: 7px;
+                padding: 7px;
+            }
+
+            .sidebar {
+                padding: 9px 6px;
+            }
+
+            .menu-group h4 {
+                font-size: 12px;
+            }
+
+            .menu-group a {
+                font-size: 10px;
+                margin-left: 4px;
+            }
+
+            .content {
+                padding: 9px;
+            }
+
+            .content > h3 {
+                font-size: 15px;
+            }
+
+            .category h4 {
+                font-size: 13px;
+            }
+
+            .product-grid {
+                gap: 6px;
+            }
+
+            .product-card img {
+                height: 80px;
+                width: calc(100% - 8px);
+            }
+
+            .product-info {
+                padding: 5px 6px 7px;
+            }
+
+            .product-info h5 {
+                font-size: 11px;
+            }
+
+            .product-info p {
+                font-size: 10px;
+            }
+        }
+
+
+        /* 11. HP LAYAR SANGAT KECIL */
+        @media (max-width: 360px) {
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        
+/* POPUP DETAIL PRODUK */
+
+.product-dialog {
+    width: min(690px, calc(100vw - 28px));
+    height: min(620px, calc(100vh - 28px));
+    max-width: none;
+    max-height: none;
+    padding: 0;
+    border: 18px solid #f8e7ea;
+    border-radius: 22px;
+    background: #d8d8d8;
+    overflow: hidden;
+}
+
+.product-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.product-popup-inner {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    background: #d8d8d8;
+}
+
+.product-popup-back {
+    width: 86px;
+    height: 36px;
+    background: #8b0018;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.product-popup-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 28px;
+    align-items: start;
+    margin-top: 32px;
+}
+
+.product-popup-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.product-popup-text {
+    padding-top: 5px;
+}
+
+.product-popup-text h2 {
+    font-family: Georgia, serif;
+    font-size: 45px;
+    color: #302323;
+    text-decoration: underline;
+    margin: 0 0 25px;
+}
+
+.product-popup-text p {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #302323;
+    margin: 0;
+}
+
+.product-popup-bottom {
+    margin-top: auto;
+    margin-bottom: 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.product-popup-price {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    font-style: italic;
+    color: #8b0018;
+    text-decoration: underline;
+    margin: 0;
+}
+
+.product-popup-order {
+    width: 172px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #8b0018;
+    color: white;
+    border-radius: 40px;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-style: italic;
+    transition: 0.3s;
+}
+
+.product-popup-order:hover {
+    background: #a52a3a;
+    transform: scale(1.04);
+}
+
+/* RESPONSIVE HP */
+
+@media (max-width: 700px) {
+    .product-dialog {
+        width: calc(100vw - 24px);
+        height: auto;
+        max-height: calc(100vh - 24px);
+        border-width: 12px;
+        overflow-y: auto;
+    }
+
+    .product-popup-inner {
+        height: auto;
+        padding: 16px;
+    }
+
+    .product-popup-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 20px;
+    }
+
+    .product-popup-image {
+        width: min(100%, 260px);
+        height: auto;
+        aspect-ratio: 1 / 1;
+        margin: auto;
+    }
+
+    .product-popup-text {
+        text-align: center;
+    }
+
+    .product-popup-text h2 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .product-popup-text p {
+        font-size: 16px;
+    }
+
+    .product-popup-bottom {
+        margin-top: 25px;
+        margin-bottom: 12px;
+        flex-direction: column;
+        padding: 0;
+        gap: 18px;
+    }
+
+    .product-popup-price {
+        font-size: 30px;
+    }
+
+    .product-popup-order {
+        width: 155px;
+        height: 52px;
+        font-size: 19px;
+    }
+}
+
+    </style>
+    <body>
+        <header class="site-header">
+            <h2>BRISE.</h2>
+            <!--Navigasi dengan menggunakan tag link href dan unordered list-->
+            <nav>
+                <ul>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="promo.html">Promo</a></li>
+                    <li><button type="button" popovertarget="layanan-popup">Layanan</button></li>
+                    <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
+                </ul>
+            </nav>
+            <div class="header-search">
+                <input type="text" placeholder="Cari..." />
+                <button type="button" aria-label="Cari">
+                    <img src="images/tombol.search.png" alt="" width="25" height="25">
+                </button>
+            </div>
+        </header>
+        <hr> <!--Garis pembatas-->
+        <main>  <!--Main untuk menampilkan konten utama-->
+
+<main>
+
+<div class="container">
+
+    <!-- SIDEBAR KIRI -->
+    <aside class="sidebar">
+
+        <div class="menu-group">
+            <h4>Pastry &amp; Bakery</h4>
+            <a href="#croissant">› Croissant</a>
+            <a href="#cake">› Cake</a>
+            <a href="#roll">› Roll</a>
+            <a href="#bread">› Bread</a>
+        </div>
+
+        <div class="menu-group">
+            <h4>Drinks</h4>
+            <a href="#coffee">› Coffee</a>
+            <a href="#non-coffee">› Non-Coffee</a>
+            <a href="#tea">› Tea</a>
+        </div>
+
+        <div class="menu-group">
+            <h4>Foods</h4>
+            <a href="#fried-rice">› Fried Rice</a>
+            <a href="#rice-bowl">› Rice Bowl</a>
+            <a href="#iga-brise">› Iga Brise</a>
+        </div>
+
+    </aside>
+
+    <!-- KONTEN KANAN -->
+    <div class="content">
+
+        <h3>Pastry &amp; Bakery</h3>
+
+        <!-- CROISSANT -->
+        <section id="croissant" class="category">
+            <h4>Croissant</h4>
+            <div class="product-grid">
+
+                <div class="product-card" data-description="Croissant dengan tekstur renyah di luar dan lembut di dalam.">
+                    <img src="images/croissant-1.jpg" alt="Croissant 1">
+                    <div class="product-info">
+                        <h5>Croissant</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Croissant pilihan Brise dengan rasa yang nikmat.">
+                    <img src="images/croissant-2.jpg" alt="Croissant 2">
+                    <div class="product-info">
+                        <h5>Croissant</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Croissant spesial untuk menemani waktu santaimu.">
+                    <img src="images/croissant-3.jpg" alt="Croissant 3">
+                    <div class="product-info">
+                        <h5>Croissant</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CAKE -->
+        <section id="cake" class="category">
+            <h4>Cake</h4>
+            <div class="product-grid">
+
+                <div class="product-card" data-description="Cake lembut dengan cita rasa manis yang nikmat.">
+                    <img src="images/cake-1.jpg" alt="Cake 1">
+                    <div class="product-info">
+                        <h5>Cake</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Cake pilihan Brise yang cocok untuk teman bersantai.">
+                    <img src="images/cake-2.jpg" alt="Cake 2">
+                    <div class="product-info">
+                        <h5>Cake</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Nikmati kelembutan cake dengan rasa yang istimewa.">
+                    <img src="images/cake-3.jpg" alt="Cake 3">
+                    <div class="product-info">
+                        <h5>Cake</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ROLL -->
+        <section id="roll" class="category">
+            <h4>Roll</h4>
+            <div class="product-grid">
+
+                <div class="product-card" data-description="Roll lembut dengan rasa manis yang menggugah selera.">
+                    <img src="images/Roll-1.jpg" alt="Roll 1">
+                    <div class="product-info">
+                        <h5>Roll</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Roll pilihan Brise untuk menemani waktu santai.">
+                    <img src="images/Roll-2.jpg" alt="Roll 2">
+                    <div class="product-info">
+                        <h5>Roll</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Roll dengan tekstur lembut dan rasa yang lezat.">
+                    <img src="images/Roll-3.jpg" alt="Roll 3">
+                    <div class="product-info">
+                        <h5>Roll</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BREAD -->
+        <section id="bread" class="category">
+            <h4>Bread</h4>
+            <div class="product-grid">
+
+                <div class="product-card" data-description="Bread yang lembut dan cocok dinikmati kapan saja.">
+                    <img src="images/bread-1.jpg" alt="Bread 1">
+                    <div class="product-info">
+                        <h5>Bread</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Bread pilihan Brise dengan rasa yang nikmat.">
+                    <img src="images/bread-2.jpg" alt="Bread 2">
+                    <div class="product-info">
+                        <h5>Bread</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Bread lembut untuk menemani aktivitasmu.">
+                    <img src="images/bread-3.jpg" alt="Bread 3">
+                    <div class="product-info">
+                        <h5>Bread</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DRINKS -->
+        <h3>Drinks</h3>
+
+        <!-- COFFEE -->
+        <section id="coffee" class="category">
+            <h4>Coffee</h4>
+            <div class="product-grid">
+
+                <div class="product-card" data-description="Coffee pilihan Brise dengan cita rasa khas yang nikmat.">
+                    <img src="images/coffee-1.jpg" alt="Coffee 1">
+                    <div class="product-info">
+                        <h5>Coffee</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Nikmati secangkir coffee yang cocok menemani waktu santaimu.">
+                    <img src="images/coffee-2.jpg" alt="Coffee 2">
+                    <div class="product-info">
+                        <h5>Coffee</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Coffee spesial dengan aroma dan rasa yang menggugah selera.">
+                    <img src="images/coffee-3.jpg" alt="Coffee 3">
+                    <div class="product-info">
+                        <h5>Coffee</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- NON-COFFEE -->
+        <section id="non-coffee" class="category">
+            <h4>Non-Coffee</h4>
+            <div class="product-grid">
+
+                <div class="product-card" data-description="Minuman non-coffee yang menyegarkan dan nikmat.">
+                    <img src="images/non-coffee-1.jpg" alt="Non Coffee 1">
+                    <div class="product-info">
+                        <h5>Non-Coffee</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Pilihan minuman tanpa coffee untuk menemani harimu.">
+                    <img src="images/non-coffee-2.jpg" alt="Non Coffee 2">
+                    <div class="product-info">
+                        <h5>Non-Coffee</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Minuman spesial Brise dengan rasa yang menyegarkan.">
+                    <img src="images/non-coffee-3.jpg" alt="Non Coffee 3">
+                    <div class="product-info">
+                        <h5>Non-Coffee</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TEA -->
+        <section id="tea" class="category">
+            <h4>Tea</h4>
+            <div class="product-grid">
+
+                <div class="product-card" data-description="Tea dengan rasa yang ringan dan menyegarkan.">
+                    <img src="images/tea-1.jpg" alt="Tea 1">
+                    <div class="product-info">
+                        <h5>Tea</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Tea pilihan Brise untuk menemani waktu bersantai.">
+                    <img src="images/tea-2.jpg" alt="Tea 2">
+                    <div class="product-info">
+                        <h5>Tea</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Nikmati kesegaran tea dengan cita rasa istimewa.">
+                    <img src="images/tea-3.jpg" alt="Tea 3">
+                    <div class="product-info">
+                        <h5>Tea</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOODS -->
+        <h3>Foods</h3>
+
+        <!-- FRIED RICE -->
+        <section id="fried-rice" class="category">
+            <h4>Fried Rice</h4>
+            <div class="product-grid">
+
+                <div class="product-card" data-description="Fried rice dengan bumbu pilihan dan cita rasa gurih.">
+                    <img src="images/fried-rice-1.jpg" alt="Fried Rice 1">
+                    <div class="product-info">
+                        <h5>Fried Rice</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Fried rice spesial yang cocok untuk menu makanmu.">
+                    <img src="images/fried-rice-2.jpg" alt="Fried Rice 2">
+                    <div class="product-info">
+                        <h5>Fried Rice</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Nikmati fried rice dengan rasa gurih dan lezat.">
+                    <img src="images/fried-rice-3.jpg" alt="Fried Rice 3">
+                    <div class="product-info">
+                        <h5>Fried Rice</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RICE BOWL -->
+        <section id="rice-bowl" class="category">
+            <h4>Rice Bowl</h4>
+            <div class="product-grid">
+
+                <div class="product-card" data-description="Rice bowl dengan perpaduan nasi dan lauk pilihan.">
+                    <img src="images/Rice-Bowl-1.jpg" alt="Rice Bowl 1">
+                    <div class="product-info">
+                        <h5>Rice Bowl</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Rice bowl spesial Brise dengan cita rasa yang nikmat.">
+                    <img src="images/Rice-Bowl-2.jpg" alt="Rice Bowl 2">
+                    <div class="product-info">
+                        <h5>Rice Bowl</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Rice bowl pilihan untuk menemani waktu makanmu.">
+                    <img src="images/Rice-Bowl-3.jpg" alt="Rice Bowl 3">
+                    <div class="product-info">
+                        <h5>Rice Bowl</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- IGA BRISE -->
+        <section id="iga-brise" class="category">
+            <h4>Iga Brise</h4>
+            <div class="product-grid">
+
+                <div class="product-card" data-description="Iga Brise dengan bumbu khas dan rasa gurih.">
+                    <img src="images/Iga-Brise-1.jpg" alt="Iga Brise 1">
+                    <div class="product-info">
+                        <h5>Iga Brise</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Menu iga spesial Brise yang nikmat dan menggugah selera.">
+                    <img src="images/Iga-Brise-2.jpg" alt="Iga Brise 2">
+                    <div class="product-info">
+                        <h5>Iga Brise</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-description="Iga Brise pilihan untuk pengalaman makan yang istimewa.">
+                    <img src="images/Iga-Brise-3.jpg" alt="Iga Brise 3">
+                    <div class="product-info">
+                        <h5>Iga Brise</h5>
+                        <p>Rp. 99.999</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+<!-- POPUP DETAIL PRODUK -->
+<dialog id="product-popup" class="product-dialog">
+
+    <div class="product-popup-inner">
+
+        <button type="button"
+                id="close-product-popup"
+                class="product-popup-back">
+            Back
+        </button>
+
+        <div class="product-popup-content">
+
+            <img id="popup-product-image"
+                 class="product-popup-image"
+                 src=""
+                 alt="Foto produk">
+
+            <div class="product-popup-text">
+                <h2 id="popup-product-name"></h2>
+                <p id="popup-product-description"></p>
+            </div>
+
+        </div>
+
+        <div class="product-popup-bottom">
+
+            <p id="popup-product-price"
+               class="product-popup-price"></p>
+
+            <a id="popup-order-button"
+               class="product-popup-order"
+               href="#"
+               target="_blank"
+               rel="noopener">
+                Order Here
+            </a>
+
+        </div>
+
+    </div>
+
+</dialog>
+
+</main>
+
+
+</div>
+        <footer class="site-footer">
+            <h2>BRISE.</h2>
+            <h4>Menu</h4>
+            <nav>
+                <ul>
+                    <li><a href="menu.html">Pastry &amp; Bakery</a></li>
+                    <li><a href="menu.html">Drinks</a></li>
+                    <li><a href="menu.html">Foods</a></li>
+                </ul>
+            </nav>
+            <h4>Info Brise</h4>
+            <nav>
+                <ul>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="promo.html">Promo</a></li>
+                    <li><button type="button" popovertarget="layanan-popup">Layanan</button></li>
+                    <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
+                </ul>
+            </nav>
+            <h4>Contact Us</h4>
+            <nav>
+                <ul>
+                    <li><a href="mailto:email@gmail.com">email@gmail.com</a></li>
+                    <li><a href="..">Instagram</a></li>
+                </ul>
+            </nav>
+            <img src="images/footer_logo.jpeg" alt="Logo Cafe Brise" class="footer-logo">
+        </footer>
+
+        <!-- Elemen ini menjadi pop-up karena memiliki atribut popover. -->
+        <!-- Nilai id harus sama dengan nilai popovertarget pada tombol Layanan. -->
+        <section id="layanan-popup" popover>
+            <!-- Tombol ini menutup pop-up yang id-nya disebutkan di popovertarget. -->
+            <!-- popovertargetaction="hide" menentukan bahwa aksinya adalah menutup. -->
+            <button type="button" popovertarget="layanan-popup" popovertargetaction="hide">
+                Back
+            </button>
+
+            <!-- Judul yang ditampilkan di bagian atas pop-up. -->
+            <h2>LAYANAN RESERVASI</h2>
+
+            <!-- Form mengelompokkan semua kolom data reservasi. -->
+            <!-- action="#" belum mengirim data ke server; method="post" menentukan metode pengiriman. -->
+            <!-- enctype diperlukan agar file bukti pembayaran ikut dikirim saat backend tersedia. -->
+            <form action="#" method="post" enctype="multipart/form-data">
+                <!-- Paragraf ini mengelompokkan label dan kolom nama. -->
+                <p>
+                    <!-- for harus sama dengan id kolom agar label terhubung dengannya. -->
+                    <label for="nama">Nama</label><br>
+                    <!-- type="text" menerima teks, name menjadi nama data, placeholder memberi petunjuk. -->
+                    <!-- required membuat kolom wajib diisi sebelum formulir dikirim. -->
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+                </p>
+
+                <!-- Bagian untuk memilih berkas bukti pembayaran. -->
+                <p>
+                    <!-- Label ini terhubung ke kolom berkas melalui atribut for dan id. -->
+                    <label for="bukti-pembayaran">Bukti Pembayaran</label><br>
+                    <!-- type="file" membuka pemilih berkas; accept membatasi jenis berkas yang disarankan. -->
+                    <input type="file" id="bukti-pembayaran" name="bukti-pembayaran" accept="image/*,.pdf" required>
+                </p>
+
+                <!-- Bagian untuk memasukkan nomor telepon. -->
+                <p>
+                    <!-- Label terhubung ke kolom telepon melalui for dan id. -->
+                    <label for="telepon">No-telp</label><br>
+                    <!-- type="tel" menandai input sebagai nomor telepon; required mewajibkan isian. -->
+                    <input type="tel" id="telepon" name="telepon" placeholder="Masukkan nomor telepon" required>
+                </p>
+
+                <!-- Bagian untuk memilih rencana reservasi dari daftar. -->
+                <p>
+                    <!-- Label ini terhubung dengan daftar pilihan di bawahnya. -->
+                    <label for="rencana-reservasi">Rencana Reservasi</label><br>
+                    <!-- select membuat menu pilihan; required meminta pengguna memilih salah satu opsi. -->
+                    <select id="rencana-reservasi" name="rencana-reservasi" required>
+                        <!-- Opsi petunjuk tidak dapat dipilih sebagai pilihan valid. -->
+                        <option value="" selected disabled>Pilih rencana reservasi</option>
+                        <!-- value adalah nilai yang akan dikirim untuk pilihan reservasi meja. -->
+                        <option value="meja">Reservasi meja</option>
+                        <!-- value adalah nilai yang akan dikirim untuk pilihan reservasi acara. -->
+                        <option value="acara">Reservasi acara</option>
+                    </select>
+                </p>
+
+                <!-- Bagian untuk memilih tempat reservasi. -->
+                <p>
+                    <!-- Label ini terhubung ke daftar tempat melalui for dan id. -->
+                    <label for="tempat-reservasi">Tempat Reservasi</label><br>
+                    <!-- Daftar pilihan tempat; required meminta satu pilihan yang valid. -->
+                    <select id="tempat-reservasi" name="tempat-reservasi" required>
+                        <!-- Opsi petunjuk yang tidak bisa dipilih sebagai jawaban. -->
+                        <option value="" selected disabled>Pilih tempat reservasi</option>
+                        <!-- value menjadi nilai data untuk pilihan area indoor. -->
+                        <option value="indoor">Area indoor</option>
+                        <!-- value menjadi nilai data untuk pilihan area outdoor. -->
+                        <option value="outdoor">Area outdoor</option>
+                        <!-- value menjadi nilai data untuk pilihan ruang meeting. -->
+                        <option value="meeting">Ruang Meeting</option>
+                    </select>
+                </p>
+
+                <!-- Tombol submit mencoba mengirim formulir; penyimpanan membutuhkan backend. -->
+                <button type="submit">Kirim</button>
+            </form>
+        </section>
+        
+
+<script>
+
+// Mengambil elemen popup
+const productPopup = document.getElementById("product-popup");
+
+// Mengambil elemen informasi produk
+const popupImage = document.getElementById("popup-product-image");
+const popupName = document.getElementById("popup-product-name");
+const popupDescription = document.getElementById("popup-product-description");
+const popupPrice = document.getElementById("popup-product-price");
+
+// Mengambil tombol
+const closePopup = document.getElementById("close-product-popup");
+const orderButton = document.getElementById("popup-order-button");
+
+// Mengambil area menu
+const productArea = document.querySelector(".content");
+
+// Ketika kartu produk diklik
+productArea.addEventListener("click", function(event) {
+
+    const card = event.target.closest(".product-card");
+
+    if (!card) return;
+
+    // Mengambil data produk
+    const image = card.querySelector("img");
+    const name = card.querySelector("h5").textContent.trim();
+    const price = card.querySelector("p").textContent.trim();
+
+    const description = card.dataset.description ||
+        `Menu ${name} pilihan Brise dengan cita rasa khas.`;
+
+    // Memasukkan data ke popup
+    popupImage.src = image.src;
+    popupImage.alt = image.alt;
+
+    popupName.textContent = name;
+    popupDescription.textContent = description;
+    popupPrice.textContent = price;
+
+    // Membuat pesan WhatsApp
+    const message = `Halo Brise, saya ingin memesan ${name} dengan harga ${price}.`;
+
+    orderButton.href =
+        "https://wa.me/?text=" + encodeURIComponent(message);
+
+    // Menampilkan popup
+    productPopup.showModal();
+
+});
+
+// Tombol Back
+closePopup.addEventListener("click", function() {
+    productPopup.close();
+});
+
+// Klik bagian luar popup untuk menutup
+productPopup.addEventListener("click", function(event) {
+    if (event.target === productPopup) {
+        productPopup.close();
+    }
+});
+
+</script>
+</body>
+</html>
+
+    </body>
+</html>
