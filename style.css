@@ -934,6 +934,7 @@ footer nav button:hover {
 
 /* Tombol Order Now */
 .order-now-button {
+    display: inline-block;
     grid-column: 2;
     grid-row: 2;
     justify-self: center;
@@ -949,6 +950,7 @@ footer nav button:hover {
     font-size: 18px;
     cursor: pointer;
     margin-top: 10px;
+    text-decoration: none;
 }
 
 /* Hover tombol */
