@@ -1,16 +1,148 @@
 <!DOCTYPE html>
-<html lang="id"> <!--Menunjukan bahasanya adalah Bahasa Indonesia-->
-    <head>
-        <meta charset="UTF-8" /> <!--Mengizinkan browser membaca semua jenis karakter teks dan simbol-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--Menunjukan viewport untuk tampilan responsif-->
-        <title>Beri Ulasan & Rating</title>
-        <link rel="stylesheet" href="style.css">
-         <link rel="preconnect" href="https://fonts.googleapis.com">
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beri Ulasan & Rating - BRISE</title>
+     <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Aoboshi+One&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header class="site-header">
+    <style>
+        /* Reset dan Base Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* Latar belakang soft pink/peach sesuai desain */
+            background-color: #FDF3F2; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        /* Bagian Header Ulasan */
+        .review-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .review-header {
+            text-align: center;
+            margin-bottom: 30px;
+            /* Warna merah maroon/gelap untuk teks header */
+            color: #8C1C13; 
+        }
+
+        .review-header h2 {
+            font-family: 'Georgia', serif; /* Font serif agar mirip logo/judul */
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .review-header p {
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* Container Form (Kotak Putih) */
+        .review-form-container {
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #E0E0E0;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            color: #333;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #A0A0A0;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8C1C13;
+        }
+
+        /* Styling untuk Rating Bintang */
+        .rating-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 5px;
+            color: #D3D3D3; /* Warna bintang kosong */
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .star {
+            transition: color 0.2s;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #FFC107; /* Warna bintang kuning saat dihover/aktif */
+        }
+
+        .rating-text {
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* Tombol Kirim Ulasan */
+        .submit-btn {
+            background-color: #8C1C13;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #6a130e;
+        }
+
+    </style>
+</head>
+<body>
+ <header class="site-header">
+            <!--Logo-->
             <h2>BRISE.</h2>
             <!--Navigasi dengan menggunakan tag link href dan unordered list-->
             <nav>
@@ -19,136 +151,99 @@
                     <li><a href="home.html">Home</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="promo.html">Promo</a></li>
+                     <!-- Tombol ini membuka elemen yang memiliki id="layanan-popup". -->
                     <li><button type="button" popovertarget="layanan-popup">Layanan</button></li>
                     <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
                 </ul>
             </nav>
+            <!--Kolom Pencarian dan menggunakan placeholder-->
             <div class="header-search">
                 <input type="text" placeholder="Cari..." />
                 <button type="button" aria-label="Cari">
-                    <img src="images/tombol.search.png" alt="" width="25" height="25">
+                <img src="images/tombol.search.png" alt="" width="25" height="25">
                 </button>
             </div>
         </header>
-        <hr> <!--Garis pembatas-->
-        <main>  <!--Main untuk menampilkan konten utama-->
+    <main>
+        <section class="review-section">
+        <!-- Judul & Deskripsi -->
+        <div class="review-header">
+            <h2>Beri Ulasan & Rating</h2>
+            <p>Terima kasih sudah berkunjung ke BRISE!<br>Bagaimana pengalaman kunjunganmu? Ceritakan kepada kami melalui ulasanmu.</p>
+        </div>
 
-
-<!-- BAGIAN BERI ULASAN DAN RATING -->
-<section class="review-section">
-
-    <!-- JUDUL HALAMAN -->
-    <div class="review-heading">
-        <h1>Beri Ulasan &amp; Rating</h1>
-        <p>Terima kasih sudah berkunjung ke BRISE!</p>
-        <span>
-            Bagaimana pengalaman kunjunganmu?
-            Ceritakan kepada kami melalui ulasanmu.
-        </span>
-    </div>
-
-    <!-- KOTAK FORM ULASAN -->
-    <div class="review-box">
-
-        <form action="#" method="post">
-
-            <!-- INPUT NAMA -->
-            <div class="form-group">
-                <label for="review-name">Nama</label>
-
-                <input
-                    type="text"
-                    id="review-name"
-                    name="nama"
-                    placeholder="Tulis namamu"
-                    required
-                >
-            </div>
-
-            <!-- INPUT RATING -->
-            <div class="form-group">
-                <label>Rating</label>
-
-                <div class="rating-container">
-
-                    <div class="star-rating" role="group" aria-label="Pilih rating">
-                        <input type="radio" id="star5" name="rating" value="5" required>
-                        <label for="star5" title="5 Bintang">☆</label>
-
-                        <input type="radio" id="star4" name="rating" value="4">
-                        <label for="star4" title="4 Bintang">☆</label>
-
-                        <input type="radio" id="star3" name="rating" value="3">
-                        <label for="star3" title="3 Bintang">☆</label>
-
-                        <input type="radio" id="star2" name="rating" value="2">
-                        <label for="star2" title="2 Bintang">☆</label>
-
-                        <input type="radio" id="star1" name="rating" value="1">
-                        <label for="star1" title="1 Bintang">☆</label>
-                    </div>
-
-                    <span class="rating-text">Pilih ratingmu</span>
-
+        <!-- Form Ulasan -->
+        <div class="review-form-container">
+            <form action="#" method="POST">
+                
+                <!-- Input Nama -->
+                <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input type="text" id="nama" name="nama" placeholder="Tulis namamu">
                 </div>
-            </div>
 
-            <!-- INPUT ULASAN -->
-            <div class="form-group">
-                <label for="review-message">Ulasan</label>
+                <!-- Input Rating -->
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="rating-group">
+                        <div class="stars">
+                            <span class="star">&#9734;</span>
+                            <span class="star">&#9734;</span>
+                            <span class="star">&#9734;</span>
+                            <span class="star">&#9734;</span>
+                            <span class="star">&#9734;</span>
+                        </div>
+                        <span class="rating-text">Pilih ratingmu</span>
+                    </div>
+                </div>
 
-                <textarea
-                    id="review-message"
-                    name="ulasan"
-                    rows="5"
-                    placeholder="Ceritakan pengalamanmu di BRISE, mulai dari menu favorit, suasana, hingga pelayanan kami..."
-                    required
-                ></textarea>
-            </div>
+                <!-- Input Ulasan -->
+                <div class="form-group">
+                    <label for="ulasan">Ulasan</label>
+                    <textarea id="ulasan" name="ulasan" rows="5" placeholder="Ceritakan pengalamanmu di BRISE, mulai dari menu favorit, suasana, hingga pelayanan kami..."></textarea>
+                </div>
 
-            <!-- TOMBOL KIRIM -->
-            <button type="submit" class="review-submit">
-                Kirim Ulasan
-            </button>
+                <!-- Tombol Submit -->
+                <button type="submit" class="submit-btn">Kirim Ulasan</button>
 
-        </form>
-gi
-    </div>
-
-</section>
-
+            </form>
+        </div>
+    </section>
+    </main>
+    <hr> <!--Garis pembatas-->
         <footer class="site-footer">
             <h2>BRISE.</h2>
             <h4>Menu</h4>
-            <nav>
+            <nav> <!--Navigasi untuk menu-->
                 <ul>
-                    <li><a href="menu.html">Pastry &amp; Bakery</a></li>
-                    <li><a href="menu.html">Drinks</a></li>
-                    <li><a href="menu.html">Foods</a></li>
+                    <li><a href="..">Pastry & Bakery</a></li>
+                    <li><a href="..">Drinks</a></li>
+                    <li><a href="..">Foods</a></li>
                 </ul>
             </nav>
             <h4>Info Brise</h4>
-            <nav>
+            <nav> <!--Navigasi untuk info Brise-->
                 <ul>
                     <li><a href="profile.html">Profile</a></li>
                     <li><a href="home.html">Home</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="promo.html">Promo</a></li>
+                     <!-- Tombol ini membuka elemen yang memiliki id="layanan-popup". -->
                     <li><button type="button" popovertarget="layanan-popup">Layanan</button></li>
                     <li><a href="beri_ulasan.html">Beri ulasan & rating</a></li>
                 </ul>
             </nav>
             <h4>Contact Us</h4>
-            <nav>
+            <nav> <!--Navigasi untuk kontak-->
                 <ul>
-                    <li><a href="mailto:email@gmail.com">email@gmail.com</a></li>
-                    <li><a href="..">Instagram</a></li>
-                </ul>
+                    <li><a href="..">email@gmail.com</a></li>
+                     <li><a href="..">Instagram</a></li>
+                </ul> 
             </nav>
             <img src="images/footer_logo.jpeg" alt="Logo Cafe Brise" class="footer-logo">
         </footer>
 
-        <!-- Elemen ini menjadi pop-up karena memiliki atribut popover. -->
+         <!-- Elemen ini menjadi pop-up karena memiliki atribut popover. -->
         <!-- Nilai id harus sama dengan nilai popovertarget pada tombol Layanan. -->
         <section id="layanan-popup" popover>
             <!-- Tombol ini menutup pop-up yang id-nya disebutkan di popovertarget. -->
@@ -225,5 +320,23 @@ gi
                 <button type="submit">Kirim</button>
             </form>
         </section>
-    </body>
+
+
+    <!-- Sedikit JavaScript agar rating bintang bisa diklik (interaktif) -->
+    <script>
+        const stars = document.querySelectorAll('.star');
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                // Reset semua bintang ke outline (kosong)
+                stars.forEach(s => s.innerHTML = '&#9734;');
+                
+                // Isi bintang (solid) dari awal sampai index yang diklik
+                for(let i = 0; i <= index; i++) {
+                    stars[i].innerHTML = '&#9733;';
+                    stars[i].classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
