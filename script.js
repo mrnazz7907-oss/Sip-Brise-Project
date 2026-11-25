@@ -257,3 +257,60 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+// ==================================
+// LENIS - SMOOTH SCROLL
+// ==================================
+
+const lenis = new Lenis({
+    duration: 1.2,
+    smoothWheel: true
+});
+
+// ==================================
+// GSAP - SCROLL TRIGGER
+// ==================================
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Sinkronisasi Lenis dengan GSAP
+lenis.on("scroll", ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
+
+// ==================================
+// GSAP - ANIMASI JUDUL
+// ==================================
+
+gsap.from(".hero-title", {
+    y: 60,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out"
+});
+
+
+// ==================================
+// GSAP - ANIMASI SAAT SCROLL
+// ==================================
+
+gsap.utils.toArray(".animate-content").forEach((element) => {
+
+    gsap.from(element, {
+        scrollTrigger: {
+            trigger: element,
+            start: "top 85%"
+        },
+
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out"
+    });
+
+});
