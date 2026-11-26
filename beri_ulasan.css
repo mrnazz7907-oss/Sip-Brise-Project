@@ -1,0 +1,128 @@
+        /* Reset dan Base Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* Latar belakang soft pink/peach sesuai desain */
+            background-color: #FDF3F2; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        /* Bagian Header Ulasan */
+        .review-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .review-header {
+            text-align: center;
+            margin-bottom: 30px;
+            /* Warna merah maroon/gelap untuk teks header */
+            color: #8C1C13; 
+        }
+
+        .review-header h2 {
+            font-family: 'Georgia', serif; /* Font serif agar mirip logo/judul */
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .review-header p {
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* Container Form (Kotak Putih) */
+        .review-form-container {
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #E0E0E0;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            color: #333;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #A0A0A0;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8C1C13;
+        }
+
+        /* Styling untuk Rating Bintang */
+        .rating-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 5px;
+            color: #D3D3D3; /* Warna bintang kosong */
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .star {
+            transition: color 0.2s;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #FFC107; /* Warna bintang kuning saat dihover/aktif */
+        }
+
+        .rating-text {
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* Tombol Kirim Ulasan */
+        .submit-btn {
+            background-color: #8C1C13;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #6a130e;
+        }
