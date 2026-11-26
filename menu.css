@@ -506,3 +506,26 @@
         font-size: 23px;
     }
 }
+/* Mengatur posisi popup ke tengah layar */
+#product-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+
+    width: 90%;
+    max-width: 550px;
+    max-height: 85vh;
+
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Background popup */
+#product-popup::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+}
