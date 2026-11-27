@@ -26,8 +26,8 @@
                 </ul>
             </nav>
             <div class="header-search">
-                <input type="text" placeholder="Cari..." />
-                <button type="button" aria-label="Cari">
+                <input type="text" id="site-search-input" placeholder="Cari..." />
+                <button type="button" id="site-search-btn" aria-label="Cari">
                     <img src="images/tombol.search.png" alt="" width="25" height="25">
                 </button>
             </div>
@@ -68,6 +68,7 @@
 
     <!-- KONTEN KANAN -->
     <div class="content">
+        <div class="no-results" hidden>menu tidak ditemukan.</div>
 
         <h3>Pastry &amp; Bakery</h3>
 
@@ -636,6 +637,7 @@ productPopup.addEventListener("click", function(event) {
 
 <!-- ANIMASI WEBSITE -->
 <script src="animation.js"></script>
+<script src="search.js"></script>
 </body>
 </html>
 
