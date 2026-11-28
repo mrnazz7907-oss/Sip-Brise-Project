@@ -1,26 +1,25 @@
             .main-based {
                 width: 100%;
                 min-height: 85vh;
-                padding-top: 110px;
-                padding-bottom: 60px;
+                padding: 110px 20px 60px;
                 background-image: 
                     url("images/kota.kirinobg.png"),
                     url("images/awan.1nobg.png"),
                     url("images/kota.kanannobg.png"),
                     url("images/awan.1nobg.png");
                 background-repeat: no-repeat;
-               background-position: 
-        left -10px top 10px,     /* Gedung kiri: mulai di bawah header */
-        right 120px top 90px,    /* Awan kanan */
-        right 5px top 455px,
-        left 120px top 90px;
+                background-position: 
+                    left -10px top 10px,     /* Gedung kiri: mulai di bawah header */
+                    right 120px top 90px,    /* Awan kanan */
+                    right 5px bottom 0,
+                    left 120px top 90px;
             /* Kota kanan bawah: geser angka 430px agar pas di atas footer */
-            background-size: 
-            130px auto,
-            265px auto,
-            280px auto,
-            240px auto;
-            background-blend-mode: multiply;            
+                background-size: 
+                    130px auto,
+                    265px auto,
+                    280px auto,
+                    240px auto;
+                background-blend-mode: multiply;            
             }
             .title-coffe {
                 font-family: 'Aoboshi One', serif;
@@ -56,4 +55,36 @@
             .get-started-btn:hover {
                 background-color: #471212;
                 transform: scale(1.03); /* Efek membesar sedikit saat ditunjuk kursor */
+            }
+
+            @media (max-width: 600px) {
+                .main-based {
+                    min-height: 70vh;
+                    padding: 75px 16px 100px;
+                    background-position: 
+                    left -15px top 5px,
+                    right -15px top 55px,
+                    right -5px bottom 0,
+                    left -15px top 55px;
+                    background-size: 
+                    90px auto,
+                    130px auto,
+                    220px auto,
+                    130px auto;
+                }
+                .title-coffe {
+                    font-size: 36px;
+                }
+                .title-mood {
+                    font-size: 42px;
+                    margin-right: 125px;
+                }
+                .title-brise {
+                    font-size: 50px;
+                }
+                .get-started-btn {
+                    padding: 10px 20px;
+                    font-size: 16px;
+                }
+
             }

@@ -209,3 +209,16 @@ footer {
 .footer-column nav li {
     margin-bottom: 7px;
 }
+
+@media (max-width: 600px) {
+    #hero-slider {
+        padding: 18px;
+        min-height: auto;
+        border-radius: 14px;
+    }
+    .slide-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+    }
+}
