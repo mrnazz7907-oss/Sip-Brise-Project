@@ -196,17 +196,114 @@
     <!-- Sedikit JavaScript agar rating bintang bisa diklik (interaktif) -->
     <script>
         const stars = document.querySelectorAll('.star');
+        const ratingText = document.querySelector('.rating-text');
+        const reviewForm = document.querySelector('.review-form-container form');
+        const submitBtn = document.querySelector('.submit-btn');
+        const namaInput = document.getElementById('nama');
+        const ulasanInput = document.getElementById('ulasan');
+
+        let selectedRating = 0;
+
+        const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdNpUwNyn02VXYlmMkfyZh7b8nWFCpaMGlgYEbNbcblSa5kRg/formResponse";
+        const ENTRY_NAMA   = "entry.1157307184";
+        const ENTRY_RATING = "entry.433064568";
+        const ENTRY_ULASAN = "entry.471874506";
+
+        const statusMsg = document.createElement('p');
+        statusMsg.style.marginTop = '12px';
+        statusMsg.style.fontSize = '14px';
+        statusMsg.hidden = true;
+        reviewForm.appendChild(statusMsg);
+
         stars.forEach((star, index) => {
             star.addEventListener('click', () => {
-                // Reset semua bintang ke outline (kosong)
-                stars.forEach(s => s.innerHTML = '&#9734;');
-                
-                // Isi bintang (solid) dari awal sampai index yang diklik
-                for(let i = 0; i <= index; i++) {
+                selectedRating = index + 1;
+
+                stars.forEach(s => {
+                    s.innerHTML = '&#9734;';
+                    s.classList.remove('active');
+                });
+
+                for (let i = 0; i <= index; i++) {
                     stars[i].innerHTML = '&#9733;';
                     stars[i].classList.add('active');
                 }
+
+                if (ratingText) {
+                    ratingText.textContent = `${selectedRating} dari 5 bintang`;
+                }
             });
+        });
+
+        reviewForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const nama = namaInput.value.trim();
+            const ulasan = ulasanInput.value.trim();
+
+            if (!nama) {
+                statusMsg.textContent = "Silakan isi nama terlebih dahulu.";
+                statusMsg.style.color = "#b91c1c";
+                statusMsg.hidden = false;
+                namaInput.focus();
+                return;
+            }
+
+            if (selectedRating === 0) {
+                statusMsg.textContent = "Silakan pilih rating bintang (1 sampai 5).";
+                statusMsg.style.color = "#b91c1c";
+                statusMsg.hidden = false;
+                return;
+            }
+
+            if (!ulasan) {
+                statusMsg.textContent = "Silakan tulis ulasan Anda terlebih dahulu.";
+                statusMsg.style.color = "#b91c1c";
+                statusMsg.hidden = false;
+                ulasanInput.focus();
+                return;
+            }
+
+            const formData = new URLSearchParams();
+            formData.append(ENTRY_NAMA, nama);
+            formData.append(ENTRY_RATING, String(selectedRating));
+            formData.append(ENTRY_ULASAN, ulasan);
+
+            submitBtn.disabled = true;
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = "Mengirim...";
+
+            try {
+                await fetch(GOOGLE_FORM_ACTION_URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+                    },
+                    body: formData.toString()
+                });
+
+                reviewForm.reset();
+                selectedRating = 0;
+                stars.forEach(s => {
+                    s.innerHTML = '&#9734;';
+                    s.classList.remove('active');
+                });
+                if (ratingText) {
+                    ratingText.textContent = "Pilih ratingmu";
+                }
+
+                statusMsg.textContent = "Terima kasih! Ulasan dan rating Anda sudah terkirim.";
+                statusMsg.style.color = "#15803d";
+                statusMsg.hidden = false;
+            } catch (err) {
+                statusMsg.textContent = "Gagal mengirim ulasan. Coba lagi beberapa saat.";
+                statusMsg.style.color = "#b91c1c";
+                statusMsg.hidden = false;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
         });
     </script>
     <script src="search.js"></script>
