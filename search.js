@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const noResultsEl = document.querySelector(".no-results");
     const isMenuPage = cards.length > 0;
 
+    const MENU_PAGE_URL = "menu.html";
+
     function getCardSearchText(card) {
         const name = card.querySelector("h5")?.textContent || "";
         const price = card.querySelector("p")?.textContent || "";
@@ -53,6 +55,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function goToMenuSearch(query = "") {
+        const params = new URLSearchParams();
+        if (query.trim()) {
+            params.set("cari", query.trim());
+        }
+        params.set("fokus", "1");
+        window.location.href = `${MENU_PAGE_URL}?${params.toString()}`;
+    }
+
     function submitSearch() {
         const query = searchInput.value.trim();
 
@@ -66,18 +77,18 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             window.history.replaceState({}, "", url);
         } else {
-            window.location.href = query
-                ? `menu.html?cari=${encodeURIComponent(query)}`
-                : "menu.html";
+            goToMenuSearch(query);
         }
     }
 
+    // Di halaman menu: filter langsung saat mengetik
     searchInput.addEventListener("input", () => {
         if (isMenuPage) {
             filterMenu(searchInput.value);
         }
     });
 
+    // Tekan Enter untuk memfilter di menu, atau pindah ke menu dari halaman lain
     searchInput.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
             event.preventDefault();
@@ -85,15 +96,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Klik ikon kaca pembesar untuk menjalankan pencarian
     if (searchBtn) {
         searchBtn.addEventListener("click", submitSearch);
     }
 
+    // Di halaman menu: terapkan kata kunci dari URL & fokuskan kursor jika diminta
     if (isMenuPage) {
-        const initialQuery = new URLSearchParams(window.location.search).get("cari") || "";
+        const params = new URLSearchParams(window.location.search);
+        const initialQuery = params.get("cari") || "";
+        const shouldFocus = params.get("fokus") === "1";
+
         if (initialQuery) {
             searchInput.value = initialQuery;
             filterMenu(initialQuery);
+        }
+
+        if (shouldFocus || initialQuery) {
+            searchInput.focus();
+            const len = searchInput.value.length;
+            searchInput.setSelectionRange(len, len);
         }
     }
 });
