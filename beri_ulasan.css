@@ -126,3 +126,29 @@
         .submit-btn:hover {
             background-color: #6a130e;
         }
+
+        @media (max-width: 600px) {
+            .review-section {
+                margin: 25px;
+                padding: 15px;
+            }
+            .review-header h2 {
+                font-size: 24px;
+            }
+            .review-header p {
+                font-size: 13px;
+            }
+            .review-form-container {
+                padding: 25px 20px;
+            }
+            .rating-group {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .submit-btn {
+                width: 50%;
+                padding: 10px;
+                font-size: 13px;
+            }
+        }
